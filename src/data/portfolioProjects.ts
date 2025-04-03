@@ -17,7 +17,7 @@ export const projects: Project[] = [
     id: "tresses-by-honey",
     title: "Tresses by Honey",
     category: "Site Vitrine",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "https://www.santeplusmag.com/wp-content/uploads/Les-11-types-de-tresses-africaines-pour-les-femmes-1200x628.jpg",
     description: "Site vitrine pour une coiffeuse spécialisée en tresses africaines à Thionville.",
     challenge: "Tresses by Honey avait besoin d'un site élégant et professionnel pour présenter ses services de coiffure spécialisée en tresses africaines et attirer une clientèle locale à Thionville.",
     solution: "Création d'un site vitrine moderne avec une galerie de réalisations, un système de prise de rendez-vous en ligne et une présentation attractive des différentes prestations.",
@@ -60,22 +60,6 @@ export const projects: Project[] = [
     ],
     technologies: ["WordPress", "Elementor", "PHP", "Formulaires personnalisés"],
     url: "https://www.centredeformationlorraine.fr"
-  },
-  {
-    id: "pulsar-esport",
-    title: "Pulsar eSport",
-    category: "E-commerce",
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&h=800&q=80",
-    description: "Site e-commerce et plateforme communautaire pour une équipe d'eSport professionnelle.",
-    challenge: "Pulsar eSport avait besoin d'une plateforme complète intégrant à la fois un site communautaire pour leurs fans et une boutique en ligne pour leurs produits dérivés.",
-    solution: "Création d'un site multi-fonctionnel avec un espace communautaire, un blog d'actualités, et une boutique e-commerce complète avec système de paiement sécurisé.",
-    results: [
-      "Forte augmentation de l'engagement des fans",
-      "Croissance de 40% des ventes de produits dérivés",
-      "Centralisation efficace de la présence en ligne de l'équipe"
-    ],
-    technologies: ["WordPress", "WooCommerce", "BuddyPress", "JavaScript", "PHP"],
-    url: "https://pulsar-esport.fr"
   },
   {
     id: "squad-esports",
