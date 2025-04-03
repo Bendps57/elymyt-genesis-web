@@ -14,6 +14,22 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "tresses-by-honey",
+    title: "Tresses by Honey",
+    category: "Site Vitrine",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&h=800&q=80",
+    description: "Site vitrine pour une coiffeuse spécialisée en tresses africaines à Thionville.",
+    challenge: "Tresses by Honey avait besoin d'un site élégant et professionnel pour présenter ses services de coiffure spécialisée en tresses africaines et attirer une clientèle locale à Thionville.",
+    solution: "Création d'un site vitrine moderne avec une galerie de réalisations, un système de prise de rendez-vous en ligne et une présentation attractive des différentes prestations.",
+    results: [
+      "Augmentation de 45% des demandes de rendez-vous",
+      "Meilleure visibilité locale sur Thionville",
+      "Présentation professionnelle des services et des réalisations"
+    ],
+    technologies: ["WordPress", "Elementor", "WooCommerce", "JavaScript"],
+    url: "https://www.tressesbyhoney.fr"
+  },
+  {
     id: "vitall-securite",
     title: "Vitall Sécurité",
     category: "Site Vitrine",
