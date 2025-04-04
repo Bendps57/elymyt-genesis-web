@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -40,7 +39,7 @@ const services: ServiceProps[] = [
       "Optimisation pour les moteurs de recherche",
       "Intégration de formulaire de contact",
       "Optimisation des performances",
-      "Hébergement et nom de domaine (1 an)"
+      "Hébergement (1 an)"
     ],
     price: "249,90€",
     features: [
