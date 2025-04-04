@@ -72,10 +72,7 @@ const Portfolio = () => {
                   <span className="font-bold">Résultats:</span> {project.results[0]}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Link to={`/portfolio/${project.id}`} className="text-white hover:text-white/90 inline-flex items-center font-medium">
-                    Voir le projet <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/90 inline-flex items-center font-medium ml-4">
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/90 inline-flex items-center font-medium">
                     Visiter le site <ExternalLink className="ml-1 h-4 w-4" />
                   </a>
                 </div>
