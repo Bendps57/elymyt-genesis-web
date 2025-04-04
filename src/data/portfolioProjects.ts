@@ -64,8 +64,8 @@ export const projects: Project[] = [
   {
     id: "squad-esports",
     title: "Squad eSports",
-    category: "Blog",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&h=800&q=80",
+    category: "Blog, Site Vitrine",
+    image: "https://t4.ftcdn.net/jpg/02/89/78/17/360_F_289781730_0OJWSY2pS9Q69KT4g2pr5liE8dmW9CL0.jpg",
     description: "Plateforme d'actualités et de contenu sur l'univers du gaming et des compétitions eSport.",
     challenge: "Squad eSports cherchait à créer un média en ligne dédié aux actualités eSport avec un système de gestion de contenu efficace et une interface attrayante pour les lecteurs.",
     solution: "Développement d'une plateforme de blog optimisée pour le référencement avec catégorisation avancée, système de commentaires, et intégration de médias sociaux.",
