@@ -23,8 +23,8 @@ export const useContactForm = () => {
           message: formData.get('message'),
         };
         
-        // Configuration pour formsubmit.co avec le code spécial fourni
-        const formResponse = await fetch("https://formsubmit.co/e4887029a3c432cc3cb815813da66e45", {
+        // Configuration pour formsubmit.co avec l'email direct
+        const formResponse = await fetch("https://formsubmit.co/ben.wemmert@gmail.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
