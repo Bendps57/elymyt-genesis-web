@@ -19,32 +19,26 @@ const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: Contact
       onSubmit={handleSubmit} 
       className="space-y-5"
     >
-      {/* Configuration FormSubmit.co */}
-      <input type="hidden" name="_subject" value="Nouveau message depuis votre site web" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_next" value={window.location.href} />
-      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-1">
+          <label htmlFor="from_name" className="block text-sm font-medium mb-1">
             Nom
           </label>
           <Input
-            id="name"
-            name="name"
+            id="from_name"
+            name="from_name"
             placeholder="Votre nom"
             required
             className="w-full"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-1">
+          <label htmlFor="reply_to" className="block text-sm font-medium mb-1">
             Email
           </label>
           <Input
-            id="email"
-            name="email"
+            id="reply_to"
+            name="reply_to"
             type="email"
             placeholder="votre@email.com"
             required
