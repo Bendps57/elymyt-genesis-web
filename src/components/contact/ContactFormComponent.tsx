@@ -22,7 +22,7 @@ const ContactFormComponent = () => {
         // Récupération du formulaire pour l'envoyer directement
         const formData = new FormData(emailFormRef.current);
         
-        const response = await fetch('https://formsubmit.co/contact@elimyt.com', {
+        const response = await fetch('https://formsubmit.co/ben.wemmert@gmail.com', {
           method: 'POST',
           body: formData,
           headers: {
@@ -80,7 +80,7 @@ const ContactFormComponent = () => {
           ref={emailFormRef} 
           onSubmit={handleSubmit} 
           className="space-y-5"
-          action="https://formsubmit.co/contact@elimyt.com" 
+          action="https://formsubmit.co/ben.wemmert@gmail.com" 
           method="POST"
         >
           {/* Configuration FormSubmit.co */}
