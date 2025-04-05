@@ -7,6 +7,7 @@ import { Send } from "lucide-react";
 import { toast } from "sonner";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { contactInfoData } from "./ContactInfo";
+import emailjs from 'emailjs-com';
 
 const ContactFormComponent = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,18 +20,24 @@ const ContactFormComponent = () => {
     
     try {
       if (emailFormRef.current) {
-        // Récupération du formulaire pour l'envoyer directement
+        // Utilisation d'EmailJS pour l'envoi du mail
         const formData = new FormData(emailFormRef.current);
         
-        const response = await fetch('https://formsubmit.co/ben.wemmert@gmail.com', {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          },
-        });
+        const templateParams = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message'),
+        };
         
-        if (response.ok) {
+        const response = await emailjs.send(
+          'service_hb7u1lf',  // Votre Service ID
+          'template_lhthd13', // Votre Template ID
+          templateParams,
+          'BsfEeaZ-7WDltmmsx'  // Votre User ID (Public Key)
+        );
+        
+        if (response.status === 200) {
           // Succès
           setFormSubmitted(true);
           toast.success("Votre message a été envoyé avec succès! Nous vous contacterons bientôt.", {
@@ -44,7 +51,7 @@ const ContactFormComponent = () => {
           // Reset form
           emailFormRef.current.reset();
         } else {
-          throw new Error("Erreur réseau lors de l'envoi");
+          throw new Error("Erreur lors de l'envoi");
         }
       }
     } catch (error) {
@@ -80,15 +87,7 @@ const ContactFormComponent = () => {
           ref={emailFormRef} 
           onSubmit={handleSubmit} 
           className="space-y-5"
-          action="https://formsubmit.co/ben.wemmert@gmail.com" 
-          method="POST"
         >
-          {/* Configuration FormSubmit.co */}
-          <input type="hidden" name="_subject" value="Nouveau message depuis votre site web" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_next" value={window.location.href} />
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1">
