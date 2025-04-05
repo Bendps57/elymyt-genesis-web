@@ -30,8 +30,8 @@ const ContactFormComponent = () => {
           message: formData.get('message'),
         };
         
-        // Configuration pour formsubmit.co qui est plus simple
-        const formResponse = await fetch("https://formsubmit.co/ben.wemmert@gmail.com", {
+        // Configuration pour formsubmit.co avec le code spécial fourni
+        const formResponse = await fetch("https://formsubmit.co/e4887029a3c432cc3cb815813da66e45", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -95,7 +95,7 @@ const ContactFormComponent = () => {
           ref={emailFormRef} 
           onSubmit={handleSubmit} 
           className="space-y-5"
-          action="https://formsubmit.co/ben.wemmert@gmail.com"
+          action="https://formsubmit.co/e4887029a3c432cc3cb815813da66e45"
           method="POST"
         >
           {/* Configuration FormSubmit.co */}
@@ -207,4 +207,3 @@ export const ContactFormBenefits = () => {
 
 // Missing CheckCircle icon import
 import { CheckCircle as CheckCircleIcon } from "lucide-react";
-
