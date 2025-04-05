@@ -1,7 +1,6 @@
 
 import { useState, useRef, FormEvent } from "react";
 import { toast } from "sonner";
-import emailjs from 'emailjs-com';
 
 export const useContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,15 +13,32 @@ export const useContactForm = () => {
     
     try {
       if (emailFormRef.current) {
-        // Configuration pour EmailJS
-        const result = await emailjs.sendForm(
-          'service_h51bybp', // Remplacez par votre service ID EmailJS
-          'template_c3z7t1r', // Remplacez par votre template ID EmailJS
-          emailFormRef.current,
-          'VvCpXLUQSlLemycp0' // Remplacez par votre clé utilisateur EmailJS
-        );
+        // Utilisation de FormData pour récupérer les valeurs du formulaire
+        const formData = new FormData(emailFormRef.current);
         
-        if (result.text === 'OK') {
+        const templateParams = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message'),
+        };
+        
+        // Configuration pour formsubmit.co avec l'email direct
+        const formResponse = await fetch("https://formsubmit.co/ben.wemmert@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: templateParams.name,
+            email: templateParams.email,
+            subject: templateParams.subject,
+            message: templateParams.message,
+          }),
+        });
+        
+        if (formResponse.ok) {
           // Succès
           setFormSubmitted(true);
           toast.success("Votre message a été envoyé avec succès! Nous vous contacterons bientôt.", {
