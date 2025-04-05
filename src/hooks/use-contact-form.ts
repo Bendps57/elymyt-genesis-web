@@ -12,27 +12,26 @@ export const useContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Configuration pour formsubmit.co avec l'email direct
-      const formResponse = await fetch("https://formsubmit.co/ben.wemmert@gmail.com", {
+      // Envoi d'un formulaire de test directement sans captcha
+      const formData = new FormData();
+      formData.append('name', 'Test Automatique');
+      formData.append('email', 'test@example.com');
+      formData.append('subject', 'Email de test du formulaire');
+      formData.append('message', 'Ceci est un email de test envoyé depuis votre formulaire de contact pour vérifier la bonne réception des emails.');
+      formData.append('_captcha', 'false');
+      formData.append('_template', 'table');
+      
+      const response = await fetch("https://formsubmit.co/ben.wemmert@gmail.com", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: "Test Automatique",
-          email: "test@example.com",
-          subject: "Email de test du formulaire",
-          message: "Ceci est un email de test envoyé depuis votre formulaire de contact pour vérifier la bonne réception des emails.",
-        }),
+        body: formData
       });
       
-      if (formResponse.ok) {
+      if (response.ok) {
         toast.success("Email de test envoyé! Vérifiez votre boîte de réception et vos spams.", {
           description: "Un email de test a été envoyé à ben.wemmert@gmail.com",
           action: {
             label: "Fermer",
-            onClick: () => console.log("Toast closed")
+            onClick: () => console.log("Toast fermé")
           }
         });
       } else {
@@ -44,7 +43,7 @@ export const useContactForm = () => {
         description: "Erreur technique lors de l'envoi. Vérifiez la configuration de formsubmit.co",
         action: {
           label: "Fermer",
-          onClick: () => console.log("Toast closed")
+          onClick: () => console.log("Toast fermé")
         }
       });
     } finally {
@@ -56,41 +55,27 @@ export const useContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    try {
-      if (emailFormRef.current) {
-        // Utilisation de FormData pour récupérer les valeurs du formulaire
+    if (emailFormRef.current) {
+      try {
+        // Soumettre le formulaire de manière traditionnelle pour contourner les limitations AJAX
         const formData = new FormData(emailFormRef.current);
         
-        const templateParams = {
-          name: formData.get('name'),
-          email: formData.get('email'),
-          subject: formData.get('subject'),
-          message: formData.get('message'),
-        };
+        // Ajouter _captcha=false pour éviter la page de vérification
+        formData.append('_captcha', 'false');
         
-        // Configuration pour formsubmit.co avec l'email direct
-        const formResponse = await fetch("https://formsubmit.co/ben.wemmert@gmail.com", {
+        const response = await fetch("https://formsubmit.co/ben.wemmert@gmail.com", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            name: templateParams.name,
-            email: templateParams.email,
-            subject: templateParams.subject,
-            message: templateParams.message,
-          }),
+          body: formData
         });
         
-        if (formResponse.ok) {
+        if (response.ok) {
           // Succès
           setFormSubmitted(true);
           toast.success("Votre message a été envoyé avec succès! Nous vous contacterons bientôt.", {
             description: "Merci de nous avoir contacté",
             action: {
               label: "Fermer",
-              onClick: () => console.log("Toast closed")
+              onClick: () => console.log("Toast fermé")
             }
           });
           
@@ -99,18 +84,18 @@ export const useContactForm = () => {
         } else {
           throw new Error("Erreur lors de l'envoi");
         }
+      } catch (error) {
+        console.error("Erreur lors de l'envoi du message:", error);
+        toast.error("Une erreur est survenue lors de l'envoi de votre message", {
+          description: "Veuillez réessayer plus tard ou nous contacter directement par WhatsApp",
+          action: {
+            label: "Fermer",
+            onClick: () => console.log("Toast fermé")
+          }
+        });
+      } finally {
+        setIsSubmitting(false);
       }
-    } catch (error) {
-      console.error("Erreur lors de l'envoi du message:", error);
-      toast.error("Une erreur est survenue lors de l'envoi de votre message", {
-        description: "Veuillez réessayer plus tard ou nous contacter directement par WhatsApp",
-        action: {
-          label: "Fermer",
-          onClick: () => console.log("Toast closed")
-        }
-      });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 

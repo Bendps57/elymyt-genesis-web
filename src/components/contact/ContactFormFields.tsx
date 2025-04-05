@@ -17,6 +17,8 @@ const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: Contact
     <form 
       ref={emailFormRef} 
       onSubmit={handleSubmit} 
+      action="https://formsubmit.co/ben.wemmert@gmail.com"
+      method="POST"
       className="space-y-5"
     >
       {/* Configuration FormSubmit.co */}
@@ -24,6 +26,7 @@ const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: Contact
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_next" value={window.location.href} />
+      <input type="hidden" name="_autoresponse" value="Merci pour votre message. Nous vous contacterons dans les plus brefs délais." />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
