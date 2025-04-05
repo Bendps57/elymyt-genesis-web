@@ -20,7 +20,7 @@ const ContactFormComponent = () => {
     
     try {
       if (emailFormRef.current) {
-        // Utilisation d'EmailJS pour l'envoi du mail
+        // Utilisation de FormData pour récupérer les valeurs du formulaire
         const formData = new FormData(emailFormRef.current);
         
         const templateParams = {
@@ -30,14 +30,22 @@ const ContactFormComponent = () => {
           message: formData.get('message'),
         };
         
-        const response = await emailjs.send(
-          'service_hb7u1lf',  // Votre Service ID
-          'template_lhthd13', // Votre Template ID
-          templateParams,
-          'BsfEeaZ-7WDltmmsx'  // Votre User ID (Public Key)
-        );
+        // Configuration pour formsubmit.co qui est plus simple
+        const formResponse = await fetch("https://formsubmit.co/ben.wemmert@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: templateParams.name,
+            email: templateParams.email,
+            subject: templateParams.subject,
+            message: templateParams.message,
+          }),
+        });
         
-        if (response.status === 200) {
+        if (formResponse.ok) {
           // Succès
           setFormSubmitted(true);
           toast.success("Votre message a été envoyé avec succès! Nous vous contacterons bientôt.", {
@@ -87,7 +95,15 @@ const ContactFormComponent = () => {
           ref={emailFormRef} 
           onSubmit={handleSubmit} 
           className="space-y-5"
+          action="https://formsubmit.co/ben.wemmert@gmail.com"
+          method="POST"
         >
+          {/* Configuration FormSubmit.co */}
+          <input type="hidden" name="_subject" value="Nouveau message depuis votre site web" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value={window.location.href} />
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1">
@@ -191,3 +207,4 @@ export const ContactFormBenefits = () => {
 
 // Missing CheckCircle icon import
 import { CheckCircle as CheckCircleIcon } from "lucide-react";
+
