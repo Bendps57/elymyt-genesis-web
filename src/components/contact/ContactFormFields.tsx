@@ -18,8 +18,6 @@ const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: Contact
       ref={emailFormRef} 
       onSubmit={handleSubmit} 
       className="space-y-5"
-      action="https://formsubmit.co/e4887029a3c432cc3cb815813da66e45"
-      method="POST"
     >
       {/* Configuration FormSubmit.co */}
       <input type="hidden" name="_subject" value="Nouveau message depuis votre site web" />
