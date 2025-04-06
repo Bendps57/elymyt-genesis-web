@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -49,7 +48,7 @@ const services: ServiceProps[] = [
       "Livré en 7 jours",
       "SEO optimisé",
       "Performance maximale",
-      "Domaine + Hébergement offerts 1 an"
+      "Nom de domaine professionnel et hébergement premium offerts la 1ère année"
     ],
     popular: true
   },
