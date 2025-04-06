@@ -94,10 +94,6 @@ const LandingPage = () => {
       description: "Analyse complète pour maximiser votre visibilité sur Google (valeur 350€)"
     },
     {
-      title: "Kit Réseaux Sociaux",
-      description: "Bannières et visuels coordonnés pour vos profils sociaux (valeur 199€)"
-    },
-    {
       title: "Guide Premium",
       description: "Stratégies pour convertir les visiteurs en clients (valeur 99€)"
     }
@@ -329,11 +325,11 @@ const LandingPage = () => {
               Bonus <span className="text-gradient">Exclusifs</span>
             </h2>
             <p className="text-lg text-foreground/70">
-              Offerts avec votre site web (valeur totale : 648€)
+              Offerts avec votre site web (valeur totale : 449€)
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {bonuses.map((bonus, index) => (
               <Card key={index} className="border-dashed border-2 border-primary/30">
                 <CardHeader>
