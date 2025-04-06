@@ -20,7 +20,7 @@ const FaqSection = () => {
     },
     {
       question: "Est-ce que je peux modifier mon site ?",
-      answer: "Notre équipe s'occupe de tout pour vous garantir un site toujours propre et professionnel. Vous n'avez rien à gérer : notre service après-vente est à votre disposition pour effectuer toutes les modificati"
+      answer: "Notre équipe s'occupe de tout pour vous garantir un site toujours propre et professionnel. Vous n'avez rien à gérer : notre service après-vente est à votre disposition pour effectuer toutes les modifications que vous souhaitez, rapidement et sans frais supplémentaires."
     },
     {
       question: "Que se passe-t-il après la première année ?",
