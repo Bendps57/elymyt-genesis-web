@@ -13,10 +13,7 @@ export const useContactForm = () => {
     
     if (emailFormRef.current) {
       try {
-        const form = emailFormRef.current;
-        form.submit(); // Use the native form submission
-        
-        // Show success message and reset form
+        // Show success message
         setFormSubmitted(true);
         toast.success("Votre message a été envoyé avec succès! Nous vous contacterons bientôt.", {
           description: "Merci de nous avoir contacté",
@@ -26,8 +23,10 @@ export const useContactForm = () => {
           }
         });
         
-        // Reset form
-        form.reset();
+        // Let the form submit natively to FormSubmit.co
+        const form = emailFormRef.current;
+        form.submit();
+        
       } catch (error) {
         console.error("Erreur lors de l'envoi du message:", error);
         toast.error("Une erreur est survenue lors de l'envoi de votre message", {
@@ -37,7 +36,6 @@ export const useContactForm = () => {
             onClick: () => console.log("Toast fermé")
           }
         });
-      } finally {
         setIsSubmitting(false);
       }
     }

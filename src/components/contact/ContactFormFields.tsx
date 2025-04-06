@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,6 +12,9 @@ interface ContactFormFieldsProps {
 }
 
 const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: ContactFormFieldsProps) => {
+  // Get the current domain for proper redirection
+  const currentDomain = window.location.origin;
+  
   return (
     <form 
       ref={emailFormRef} 
@@ -25,7 +27,7 @@ const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: Contact
       <input type="hidden" name="_subject" value="Nouveau message depuis votre site web" />
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_next" value={window.location.href} />
+      <input type="hidden" name="_next" value={`${currentDomain}/`} />
       <input type="hidden" name="_autoresponse" value="Merci pour votre message. Nous vous contacterons dans les plus brefs délais." />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
