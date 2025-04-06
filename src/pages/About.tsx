@@ -5,15 +5,26 @@ import { motion } from "framer-motion";
 import { Zap, Target, Users, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const About = () => {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
+  
+  // Scroll to top when the page loads if there's a hash in the URL
+  useEffect(() => {
+    if (window.location.hash === '#top') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="top">
       <Navbar />
       
       <section className="pt-32 pb-20">
