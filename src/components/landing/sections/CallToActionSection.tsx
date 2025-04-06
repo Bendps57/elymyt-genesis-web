@@ -31,7 +31,15 @@ const CallToActionSection = () => {
               Economisez 87% - Offre limitée dans le temps
             </p>
             <Button asChild className="btn-primary text-lg py-6 w-full animate-pulse-soft group" size="lg">
-              <Link to="/contact#contact-form">
+              <Link to="/contact#contact-form" onClick={() => { 
+                // Adding a small delay to ensure the DOM has loaded before scrolling
+                setTimeout(() => {
+                  const contactForm = document.getElementById('contact-form');
+                  if (contactForm) {
+                    contactForm.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}>
                 Je veux mon site maintenant
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
