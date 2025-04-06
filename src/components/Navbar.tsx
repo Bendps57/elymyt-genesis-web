@@ -50,6 +50,7 @@ const Navbar = () => {
             to="/"
             className="text-2xl font-bold flex items-center space-x-2"
           >
+            <img src="/logo.png" alt="eLimyt" className="h-8 mr-2" />
             <span className="text-gradient">eLimyt</span>
           </Link>
 
