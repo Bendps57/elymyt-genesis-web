@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -43,13 +44,14 @@ const services: ServiceProps[] = [
     ],
     price: "249,90€",
     features: [
-      "4-6 pages",
-      "Design moderne",
-      "Responsive mobile",
-      "Formulaire de contact",
-      "Optimisation SEO de base",
-      "Livraison sous 5 jours"
-    ]
+      "Design élégant et professionnel",
+      "100% responsive",
+      "Livré en 7 jours",
+      "SEO optimisé",
+      "Performance maximale",
+      "Domaine + Hébergement offerts 1 an"
+    ],
+    popular: true
   },
   {
     id: "ecommerce",
@@ -63,16 +65,15 @@ const services: ServiceProps[] = [
       "Design optimisé pour la conversion",
       "Suivi des commandes et des stocks"
     ],
-    price: "790€",
+    price: "Sur devis",
     features: [
       "Catalogue de produits",
       "Panier d'achat",
       "Paiement sécurisé",
       "Gestion des stocks",
       "Dashboard admin",
-      "Livraison sous 2 semaines"
-    ],
-    popular: true
+      "Devis personnalisé"
+    ]
   },
   {
     id: "refonte",
@@ -199,7 +200,7 @@ const ServiceCard = ({ id, icon, title, description, benefits, price, features, 
           </ul>
         </div>
         <Button asChild className={`w-full ${popular ? "bg-gradient" : ""}`}>
-          <Link to="/contact">
+          <Link to="/contact#contact-form">
             Demander un devis
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
@@ -245,7 +246,7 @@ const AdditionalServiceCard = ({ id, icon, title, description }: any) => {
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-foreground/70 mb-4">{description}</p>
       <Link
-        to="/contact"
+        to="/contact#contact-form"
         className="inline-flex items-center font-medium text-primary hover:text-primary/80 transition-colors"
       >
         En savoir plus <ArrowRight className="ml-1 h-4 w-4" />

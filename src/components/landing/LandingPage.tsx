@@ -149,7 +149,7 @@ const LandingPage = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button asChild className="btn-primary text-lg py-6 animate-pulse-soft group" size="lg">
-                  <Link to="/contact">
+                  <Link to="/contact#contact-form">
                     Je veux mon site maintenant
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -402,7 +402,7 @@ const LandingPage = () => {
                 Economisez 87% - Offre limitée dans le temps
               </p>
               <Button asChild className="btn-primary text-lg py-6 w-full animate-pulse-soft group" size="lg">
-                <Link to="/contact">
+                <Link to="/contact#contact-form">
                   Je veux mon site maintenant
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>

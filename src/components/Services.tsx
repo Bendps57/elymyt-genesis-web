@@ -81,7 +81,7 @@ const Services = () => {
       icon: <ShoppingCart className="h-7 w-7" />,
       title: "E-commerce",
       description: "Lancez votre boutique en ligne et boostez vos ventes avec une expérience d'achat optimale.",
-      price: "790€",
+      price: "Sur devis",
       delay: 2
     },
     {
