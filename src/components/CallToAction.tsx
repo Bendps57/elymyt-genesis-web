@@ -86,13 +86,13 @@ const CallToAction = () => {
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 font-medium px-8 py-6 text-lg hover-scale"
             >
-              <Link to="/contact">
+              <Link to="/contact#contact-form">
                 Démarrez votre projet maintenant
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <p className="mt-4 text-white/80 text-sm">
-              Ou <Link to="/contact" className="underline">contactez-nous</Link> pour discuter de vos besoins spécifiques
+              Ou <Link to="/contact#contact-form" className="underline">contactez-nous</Link> pour discuter de vos besoins spécifiques
             </p>
           </div>
         </div>

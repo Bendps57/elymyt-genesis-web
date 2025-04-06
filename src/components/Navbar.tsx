@@ -74,7 +74,7 @@ const Navbar = () => {
               asChild
               className="bg-gradient hover-scale"
             >
-              <Link to="/contact">Démarrer un projet</Link>
+              <Link to="/contact#contact-form">Démarrer un projet</Link>
             </Button>
           </div>
 
@@ -113,7 +113,7 @@ const Navbar = () => {
                 asChild
                 className="bg-gradient"
               >
-                <Link to="/contact">Démarrer un projet</Link>
+                <Link to="/contact#contact-form">Démarrer un projet</Link>
               </Button>
             </div>
           </div>

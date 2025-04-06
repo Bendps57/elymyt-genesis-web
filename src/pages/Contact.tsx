@@ -8,6 +8,7 @@ import ChatWidget from "../components/chat/ChatWidget";
 const ContactPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
+  const contactFormRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +26,22 @@ const ContactPage = () => {
     }
     
     return () => observer.disconnect();
+  }, []);
+  
+  // Scroll to the contact form section when the page loads or when URL has #contact-form
+  useEffect(() => {
+    const scrollToContactForm = () => {
+      const formElement = document.getElementById('contact-form');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    
+    // Scroll on load or if hash is present
+    if (window.location.hash === '#contact-form') {
+      // Add a small delay to ensure the DOM is fully loaded
+      setTimeout(scrollToContactForm, 100);
+    }
   }, []);
   
   return (
@@ -50,7 +67,9 @@ const ContactPage = () => {
         </div>
       </section>
       
-      <ContactForm />
+      <div ref={contactFormRef}>
+        <ContactForm />
+      </div>
       <Footer />
       
       {/* Widget de chat WhatsApp */}
