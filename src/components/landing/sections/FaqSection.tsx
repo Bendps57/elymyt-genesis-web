@@ -16,11 +16,11 @@ const FaqSection = () => {
     },
     {
       question: "Comment se déroule le processus de création ?",
-      answer: "Après votre commande, nous vous envoyons un questionnaire pour comprendre vos besoins. Nous créons ensuite une maquette dans les 48h. Après vos retours, nous finalisons le site en 5 jours maximum et le mettons en ligne. Vous recevez une formation rapide pour gérer votre contenu."
+      answer: "Après votre commande, nous vous envoyons un questionnaire pour comprendre vos besoins. Nous créons ensuite une maquette dans les 48h. Après vos retours, nous finalisons le site en 5 jours maximum et le mettons en ligne."
     },
     {
-      question: "Est-ce que je peux modifier mon site moi-même ?",
-      answer: "Absolument ! Nous mettons en place un système simple qui vous permet de mettre à jour votre contenu facilement, sans connaissances techniques. Une formation rapide est incluse dans l'offre."
+      question: "Est-ce que je peux modifier mon site ?",
+      answer: "Notre équipe s'occupe de tout pour vous garantir un site toujours propre et professionnel. Vous n'avez rien à gérer : notre service après-vente est à votre disposition pour effectuer toutes les modificati"
     },
     {
       question: "Que se passe-t-il après la première année ?",
