@@ -40,8 +40,16 @@ const Navbar = () => {
 
   // Handle smooth scroll to contact form
   const handleContactClick = (e) => {
-    if (location.pathname === "/contact") {
-      e.preventDefault();
+    e.preventDefault();
+    setIsOpen(false);
+    
+    // Determine if we need to navigate to the contact page first
+    if (location.pathname !== "/contact") {
+      // Store the scroll intention and navigate
+      sessionStorage.setItem('scrollToContactForm', 'true');
+      window.location.href = "/contact#contact-form";
+    } else {
+      // Already on contact page, just scroll
       const formElement = document.getElementById('contact-form');
       if (formElement) {
         formElement.scrollIntoView({ behavior: 'smooth' });
@@ -58,7 +66,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        {/* This header bar will now always be visible, even when menu is open */}
+        {/* Header bar - always visible with solid background */}
         <div className="flex justify-between items-center bg-white dark:bg-elimyt-dark">
           <Link
             to="/"
@@ -107,17 +115,17 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation - Modified to position below the header */}
+        {/* Mobile Navigation - Semi-transparent overlay that shows part of the content */}
         {isOpen && (
-          <div className="md:hidden fixed inset-0 top-[61px] bg-white dark:bg-elimyt-dark z-40 overflow-y-auto">
-            <div className="flex flex-col space-y-4 py-6 px-4 h-full bg-white dark:bg-elimyt-dark">
+          <div className="md:hidden fixed inset-0 top-[61px] bg-black/30 z-40">
+            <div className="flex flex-col space-y-4 py-6 px-4 max-h-[80vh] overflow-y-auto bg-white dark:bg-elimyt-dark rounded-b-xl shadow-lg">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   onClick={(e) => {
                     if (item.href === "/contact") handleContactClick(e);
-                    setIsOpen(false);
+                    else setIsOpen(false);
                   }}
                   className={`text-base font-medium p-3 rounded-md transition-colors bg-white dark:bg-elimyt-dark ${
                     location.pathname === item.href
@@ -131,9 +139,9 @@ const Navbar = () => {
               <Button
                 asChild
                 className="bg-gradient mt-4"
-                onClick={() => setIsOpen(false)}
+                onClick={handleContactClick}
               >
-                <Link to="/contact#contact-form" onClick={handleContactClick}>Démarrer un projet</Link>
+                <a href="/contact#contact-form">Démarrer un projet</a>
               </Button>
             </div>
           </div>

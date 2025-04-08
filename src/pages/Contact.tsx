@@ -28,24 +28,24 @@ const ContactPage = () => {
     return () => observer.disconnect();
   }, []);
   
-  // Scroll to the contact form section when the page loads or when URL has #contact-form
+  // Scroll to the contact form section when the page loads with appropriate anchors
   useEffect(() => {
-    // Fonction pour faire défiler jusqu'au formulaire de contact
+    // Function to scroll to contact form with a slight delay to ensure DOM is ready
     const scrollToContactForm = () => {
-      const formElement = document.getElementById('contact-form');
-      if (formElement) {
-        setTimeout(() => {
+      setTimeout(() => {
+        const formElement = document.getElementById('contact-form');
+        if (formElement) {
           formElement.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+        }
+      }, 300);
     };
     
-    // Vérifie si l'URL contient #contact-form
+    // Check if URL contains the contact-form anchor
     if (window.location.hash === '#contact-form') {
       scrollToContactForm();
     }
     
-    // Vérifier s'il y a une demande de défilement via localStorage (pour les redirections depuis le footer)
+    // Check for sessionStorage redirect instruction
     const shouldScrollToForm = sessionStorage.getItem('scrollToContactForm');
     if (shouldScrollToForm === 'true') {
       scrollToContactForm();
@@ -76,7 +76,7 @@ const ContactPage = () => {
         </div>
       </section>
       
-      <div ref={contactFormRef}>
+      <div id="formulaire-contact" ref={contactFormRef}>
         <ContactForm />
       </div>
       <Footer />

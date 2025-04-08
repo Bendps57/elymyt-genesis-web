@@ -5,9 +5,13 @@ import ContactInfoColumn from "./ContactInfoColumn";
 import SectionTitle from "../common/SectionTitle";
 import AnimatedContainer from "../common/AnimatedContainer";
 
-const ContactSection = () => {
+interface ContactSectionProps {
+  id?: string;
+}
+
+const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
   return (
-    <section id="contact" className="section-padding bg-background">
+    <section id={id || "contact"} className="section-padding bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle 
           title="Contactez"
