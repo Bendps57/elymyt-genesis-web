@@ -50,7 +50,16 @@ const Navbar = () => {
             to="/"
             className="font-bold flex items-center space-x-2"
           >
-            <img src="/logo.png" alt="Logo" className="h-8" />
+            <img 
+              src="/logo.png" 
+              alt="Logo" 
+              className="h-8 object-contain" 
+              style={{ maxWidth: '100px' }}
+              onError={(e) => {
+                console.error("Logo failed to load");
+                e.currentTarget.src = 'https://i.imgur.com/EZdv9wH.jpeg';
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
