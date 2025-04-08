@@ -104,7 +104,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation - Changed from bg-white/95 to bg-white for solid white background */}
+        {/* Mobile Navigation - Solid white background for better visibility */}
         {isOpen && (
           <div className="md:hidden fixed inset-0 top-[61px] bg-white dark:bg-elimyt-dark z-40 animate-fade-in">
             <div className="flex flex-col space-y-4 py-6 px-4 h-full">
