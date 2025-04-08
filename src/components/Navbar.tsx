@@ -56,15 +56,15 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "py-0.5 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
-          : "py-1 bg-transparent"
+          ? "py-0 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
+          : "py-0 bg-transparent"
       } ${visible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link
             to="/"
-            className="font-bold flex items-center space-x-2"
+            className="font-bold flex items-center"
           >
             <img 
               src="https://i.imgur.com/Dre52Cp.png" 
@@ -94,7 +94,8 @@ const Navbar = () => {
             </div>
             <Button
               asChild
-              className="bg-gradient hover-scale"
+              className="bg-gradient hover-scale py-1"
+              size="sm"
             >
               <Link to="/contact#contact-form">Démarrer un projet</Link>
             </Button>
@@ -116,13 +117,13 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 animate-fade-in">
-            <div className="flex flex-col space-y-4 py-4">
+          <div className="md:hidden mt-2 animate-fade-in">
+            <div className="flex flex-col space-y-2 py-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-base font-medium p-2 rounded-md transition-colors ${
+                  className={`text-base font-medium p-1 rounded-md transition-colors ${
                     location.pathname === item.href
                       ? "text-gradient bg-accent/10"
                       : "text-foreground/80 hover:text-foreground hover:bg-accent/5"
@@ -133,7 +134,8 @@ const Navbar = () => {
               ))}
               <Button
                 asChild
-                className="bg-gradient"
+                className="bg-gradient py-1"
+                size="sm"
               >
                 <Link to="/contact#contact-form">Démarrer un projet</Link>
               </Button>
