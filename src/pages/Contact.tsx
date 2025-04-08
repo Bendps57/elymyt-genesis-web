@@ -48,7 +48,7 @@ const ContactPage = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <section className="pt-32 pb-12">
+      <section className="pt-48 pb-12">
         <div className="container mx-auto px-4 md:px-6">
           <div 
             ref={headerRef}
