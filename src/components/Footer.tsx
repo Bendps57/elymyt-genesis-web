@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -31,84 +31,158 @@ const Footer = () => {
     { name: "CGV", href: "/terms" }
   ];
   
+  const socialLinks = [
+    { icon: <Facebook size={20} />, href: "https://facebook.com", label: "Facebook" },
+    { icon: <Instagram size={20} />, href: "https://instagram.com", label: "Instagram" },
+    { icon: <Linkedin size={20} />, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: <Mail size={20} />, href: "mailto:contact@elimyt.com", label: "Email" },
+    { icon: <Phone size={20} />, href: "tel:+33612345678", label: "Téléphone" }
+  ];
+  
   return (
-    <footer className="bg-elimyt-dark text-white pt-16 pb-8 relative">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
-            <Link to="/" className="text-2xl font-bold mb-4 inline-block text-gradient">
-              eLimyt
-            </Link>
-            <p className="text-white/70 mb-6">
-              Agence web spécialisée dans la création de sites internet modernes, 
-              performants et à prix attractifs.
-            </p>
+    <footer className="relative">
+      {/* Stylish decorative header for footer */}
+      <div className="h-24 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://i.imgur.com/A6fX34u.png')] bg-repeat-x bg-contain opacity-10"></div>
+        <div className="container mx-auto px-4 h-full flex items-end justify-center">
+          <div className="h-12 w-24 bg-elimyt-dark transform translate-y-6 rounded-t-2xl flex items-center justify-center">
+            <img src="https://i.imgur.com/A6fX34u.png" alt="eLimyt" className="h-8" />
+          </div>
+        </div>
+      </div>
+      
+      {/* Main footer content */}
+      <div className="bg-elimyt-dark text-white pt-16 pb-8">
+        <div className="container mx-auto px-4 md:px-6">
+          {/* Footer grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {/* Brand section */}
+            <div>
+              <div className="mb-4 relative inline-block">
+                <Link to="/" className="text-2xl font-bold inline-block text-gradient">
+                  eLimyt
+                </Link>
+                <div className="absolute -bottom-2 left-0 h-0.5 w-16 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink"></div>
+              </div>
+              <p className="text-white/70 mb-6">
+                Agence web spécialisée dans la création de sites internet modernes, 
+                performants et à prix attractifs.
+              </p>
+              
+              {/* Social media links */}
+              <div className="flex space-x-4 mb-6">
+                {socialLinks.map((social, index) => (
+                  <a 
+                    key={index} 
+                    href={social.href} 
+                    className="p-2 rounded-full bg-white/10 hover:bg-gradient-to-r from-elimyt-blue to-elimyt-pink transition-all duration-300 hover-scale" 
+                    aria-label={social.label}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+            
+            {/* Services section */}
+            <div>
+              <h3 className="text-lg font-bold mb-4 relative inline-block">
+                Nos Services
+                <div className="absolute -bottom-2 left-0 h-0.5 w-12 bg-gradient-to-r from-elimyt-blue to-elimyt-purple"></div>
+              </h3>
+              <ul className="space-y-3">
+                {services.map((service) => (
+                  <li key={service.name}>
+                    <Link
+                      to={service.href}
+                      className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-pink before:mr-0 hover:before:mr-1 before:transition-all"
+                    >
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Company section */}
+            <div>
+              <h3 className="text-lg font-bold mb-4 relative inline-block">
+                eLimyt
+                <div className="absolute -bottom-2 left-0 h-0.5 w-12 bg-gradient-to-r from-elimyt-purple to-elimyt-pink"></div>
+              </h3>
+              <ul className="space-y-3">
+                {company.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.href}
+                      className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-purple before:mr-0 hover:before:mr-1 before:transition-all"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Information section */}
+            <div>
+              <h3 className="text-lg font-bold mb-4 relative inline-block">
+                Informations
+                <div className="absolute -bottom-2 left-0 h-0.5 w-12 bg-gradient-to-r from-elimyt-blue to-elimyt-pink"></div>
+              </h3>
+              <ul className="space-y-3">
+                {legal.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.href}
+                      className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-blue before:mr-0 hover:before:mr-1 before:transition-all"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={scrollToTop}
+                  className="bg-gradient-to-r from-elimyt-blue to-elimyt-purple p-3 rounded-full transition-all duration-300 group hover:shadow-lg hover:shadow-elimyt-purple/20"
+                  aria-label="Retour en haut"
+                >
+                  <ArrowUp className="h-5 w-5 transition-transform group-hover:-translate-y-1" />
+                </button>
+              </div>
+            </div>
           </div>
           
-          <div>
-            <h3 className="text-lg font-bold mb-4">Nos Services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    to={service.href}
-                    className="text-white/70 hover:text-white transition-colors duration-300 block"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-bold mb-4">eLimyt</h3>
-            <ul className="space-y-3">
-              {company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className="text-white/70 hover:text-white transition-colors duration-300 block"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-bold mb-4">Informations</h3>
-            <ul className="space-y-3">
-              {legal.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    to={item.href}
-                    className="text-white/70 hover:text-white transition-colors duration-300 block"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6">
-              <button
-                onClick={scrollToTop}
-                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors duration-300 group"
-                aria-label="Retour en haut"
-              >
-                <ArrowUp className="h-5 w-5 transition-transform group-hover:-translate-y-1" />
-              </button>
+          {/* Footer bottom */}
+          <div className="pt-8 mt-8 border-t border-white/10">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-white/50 text-sm">
+                © {new Date().getFullYear()} eLimyt. Tous droits réservés.
+              </p>
+              <div className="mt-4 md:mt-0">
+                <div className="flex items-center justify-center space-x-2">
+                  <span className="text-sm text-white/50">Conçu avec</span>
+                  <span className="text-elimyt-pink">❤</span>
+                  <span className="text-sm text-white/50">par eLimyt</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-white/10 pt-6 mt-8 text-center text-white/50 text-sm">
-          <p>© {new Date().getFullYear()} eLimyt. Tous droits réservés.</p>
-          <p className="mt-2">
-            Conçu avec passion pour offrir des expériences web exceptionnelles.
-          </p>
-        </div>
+      </div>
+      
+      {/* Decorative bottom wave */}
+      <div className="h-6 bg-elimyt-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 48" className="w-full h-6 transform translate-y-1">
+          <path 
+            fill="#1A1F2C" 
+            fillOpacity="1" 
+            d="M0,32L80,26.7C160,21,320,11,480,16C640,21,800,43,960,42.7C1120,43,1280,21,1360,10.7L1440,0L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
       </div>
     </footer>
   );
