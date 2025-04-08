@@ -11,15 +11,15 @@ const Footer = () => {
   };
   
   const services = [
-    { name: "Site Vitrine", href: "/services#vitrine" },
-    { name: "E-commerce", href: "/services#ecommerce" },
-    { name: "Refonte de Site", href: "/services#refonte" },
-    { name: "Référencement SEO", href: "/services#seo" },
-    { name: "Maintenance Web", href: "/services#maintenance" }
+    { name: "Site Vitrine", href: "/services" },
+    { name: "E-commerce", href: "/services" },
+    { name: "Refonte de Site", href: "/services" },
+    { name: "Référencement SEO", href: "/services" },
+    { name: "Maintenance Web", href: "/services" }
   ];
   
   const company = [
-    { name: "À propos", href: "/about#top" },
+    { name: "À propos", href: "/about" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Contact", href: "/contact" }
   ];
@@ -93,6 +93,7 @@ const Footer = () => {
                     <Link
                       to={service.href}
                       className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-pink before:mr-0 hover:before:mr-1 before:transition-all"
+                      onClick={() => window.scrollTo(0, 0)}
                     >
                       {service.name}
                     </Link>
@@ -114,6 +115,22 @@ const Footer = () => {
                       <Link
                         to={item.href}
                         className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-purple before:mr-0 hover:before:mr-1 before:transition-all"
+                        onClick={() => {
+                          if (item.name === "Contact") {
+                            // Pour le lien Contact, nous voulons faire défiler la page vers le formulaire
+                            setTimeout(() => {
+                              const contactForm = document.getElementById('contact-form');
+                              if (contactForm) {
+                                contactForm.scrollIntoView({ behavior: 'smooth' });
+                              } else {
+                                window.scrollTo(0, 0);
+                              }
+                            }, 100);
+                          } else {
+                            // Pour les autres liens, simplement revenir en haut de la page
+                            window.scrollTo(0, 0);
+                          }
+                        }}
                       >
                         {item.name}
                       </Link>
@@ -133,6 +150,7 @@ const Footer = () => {
                       <Link
                         to={item.href}
                         className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-blue before:mr-0 hover:before:mr-1 before:transition-all"
+                        onClick={() => window.scrollTo(0, 0)}
                       >
                         {item.name}
                       </Link>

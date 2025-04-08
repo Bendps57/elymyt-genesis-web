@@ -1,4 +1,5 @@
 
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
@@ -8,6 +9,11 @@ const Legal = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
+
+  useEffect(() => {
+    // Faire défiler la page vers le haut lors du chargement
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen">

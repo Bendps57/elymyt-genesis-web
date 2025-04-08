@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CallToAction from "../components/CallToAction";
@@ -9,6 +9,11 @@ import AdditionalServicesHeader from "../components/services/AdditionalServicesH
 import AdditionalServicesList from "../components/services/AdditionalServicesList";
 
 const ServicesPage = () => {
+  // Assurer que la page charge en haut quand on arrive depuis un lien du footer
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="min-h-screen">
       <Navbar />

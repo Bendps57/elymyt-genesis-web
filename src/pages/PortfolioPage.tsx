@@ -34,13 +34,22 @@ const PortfolioPage = () => {
   }, []);
   
   useEffect(() => {
-    const hash = window.location.hash.substring(1);
-    if (hash) {
-      const project = projects.find(p => p.id === hash);
-      if (project) {
-        setSelectedProject(project);
+    // Gestion des ancres et défilement automatique vers le haut
+    const handleAnchorAndScrollTop = () => {
+      // Si on vient d'arriver sur la page, faire défiler vers le haut
+      window.scrollTo(0, 0);
+      
+      // Rechercher un projet spécifique si un hash est présent dans l'URL
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        const project = projects.find(p => p.id === hash);
+        if (project) {
+          setSelectedProject(project);
+        }
       }
-    }
+    };
+    
+    handleAnchorAndScrollTop();
   }, []);
   
   return (
