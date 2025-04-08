@@ -41,15 +41,32 @@ const Footer = () => {
   
   return (
     <footer className="relative">
-      {/* Stylish decorative header for footer */}
-      <div className="h-24 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://i.imgur.com/A6fX34u.png')] bg-repeat-x bg-contain opacity-10"></div>
-        <div className="container mx-auto px-4 h-full flex items-end justify-center">
-          <div className="h-12 w-24 bg-elimyt-dark transform translate-y-6 rounded-t-2xl flex items-center justify-center">
-            <img src="https://i.imgur.com/A6fX34u.png" alt="eLimyt" className="h-8" />
+      {/* Section signature avec le logo */}
+      <div className="bg-gradient-to-br from-elimyt-blue/20 via-elimyt-purple/20 to-elimyt-pink/20 pt-16 pb-8 relative overflow-hidden">
+        <div className="container mx-auto px-4 flex flex-col items-center justify-center relative z-10">
+          {/* Logo en grand format */}
+          <div className="w-full max-w-3xl mb-8 transform hover:scale-105 transition-transform duration-500">
+            <img 
+              src="https://i.imgur.com/EFrii9y.png" 
+              alt="eLimyt Signature" 
+              className="w-full h-auto"
+            />
           </div>
+          
+          {/* Tagline */}
+          <p className="text-gray-600 text-lg mb-12 text-center max-w-2xl">
+            L'expertise numérique qui propulse votre visibilité en ligne
+          </p>
+
+          {/* Cercles décoratifs */}
+          <div className="absolute top-1/4 left-10 w-48 h-48 rounded-full bg-elimyt-blue/5 blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-10 w-64 h-64 rounded-full bg-elimyt-pink/5 blur-3xl"></div>
+          <div className="absolute top-1/3 right-1/4 w-32 h-32 rounded-full bg-elimyt-purple/5 blur-3xl"></div>
         </div>
       </div>
+      
+      {/* Séparateur stylisé */}
+      <div className="h-4 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink"></div>
       
       {/* Main footer content */}
       <div className="bg-elimyt-dark text-white pt-16 pb-8">
