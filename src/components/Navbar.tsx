@@ -48,9 +48,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link
             to="/"
-            className="font-bold flex items-center space-x-2"
+            className="text-2xl font-bold flex items-center space-x-2"
           >
-            <img src="https://i.imgur.com/GxnRgBZ.jpeg" alt="Logo" className="h-8" />
+            <span className="text-gradient">eLimyt</span>
           </Link>
 
           {/* Desktop Navigation */}
