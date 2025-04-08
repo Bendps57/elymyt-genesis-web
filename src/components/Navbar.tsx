@@ -53,7 +53,7 @@ const Navbar = () => {
             <img 
               src="https://i.imgur.com/Dre52Cp.png" 
               alt="Logo eLimyt" 
-              className="h-16 object-contain"
+              className="h-64 object-contain"
               style={{ maxWidth: '500px' }}
               loading="eager"
             />
