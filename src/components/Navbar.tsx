@@ -50,13 +50,13 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "py-3 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
+        scrolled || isOpen
+          ? "py-3 bg-white dark:bg-elimyt-dark shadow-md"
           : "py-6 bg-white/80 dark:bg-elimyt-dark/80 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center bg-white dark:bg-elimyt-dark">
           <Link
             to="/"
             className="text-2xl font-bold flex items-center space-x-2"
@@ -65,8 +65,8 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <div className="flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8 bg-white dark:bg-elimyt-dark">
+            <div className="flex space-x-8 bg-white dark:bg-elimyt-dark">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -104,9 +104,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation - Now with fully solid white background */}
+        {/* Mobile Navigation - Now with fully solid white background for the entire menu */}
         {isOpen && (
-          <div className="md:hidden fixed inset-0 top-[61px] bg-white dark:bg-elimyt-dark z-40">
+          <div className="md:hidden fixed inset-0 top-0 bg-white dark:bg-elimyt-dark z-40 pt-[61px]">
             <div className="flex flex-col space-y-4 py-6 px-4 h-full bg-white dark:bg-elimyt-dark">
               {navItems.map((item) => (
                 <Link
