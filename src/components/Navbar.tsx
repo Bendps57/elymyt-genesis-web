@@ -104,10 +104,10 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation - Solid white background for better visibility */}
+        {/* Mobile Navigation - Now with fully solid white background */}
         {isOpen && (
-          <div className="md:hidden fixed inset-0 top-[61px] bg-white dark:bg-elimyt-dark z-40 animate-fade-in">
-            <div className="flex flex-col space-y-4 py-6 px-4 h-full">
+          <div className="md:hidden fixed inset-0 top-[61px] bg-white dark:bg-elimyt-dark z-40">
+            <div className="flex flex-col space-y-4 py-6 px-4 h-full bg-white dark:bg-elimyt-dark">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -116,7 +116,7 @@ const Navbar = () => {
                     if (item.href === "/contact") handleContactClick(e);
                     setIsOpen(false);
                   }}
-                  className={`text-base font-medium p-3 rounded-md transition-colors ${
+                  className={`text-base font-medium p-3 rounded-md transition-colors bg-white dark:bg-elimyt-dark ${
                     location.pathname === item.href
                       ? "text-gradient bg-accent/10"
                       : "text-foreground/80 hover:text-foreground hover:bg-accent/5"
