@@ -40,8 +40,8 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "py-1 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
-          : "py-2 bg-transparent"
+          ? "py-0.5 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
+          : "py-1 bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -53,8 +53,8 @@ const Navbar = () => {
             <img 
               src="https://i.imgur.com/Dre52Cp.png" 
               alt="Logo eLimyt" 
-              className="h-72 object-contain"
-              style={{ maxWidth: '800px' }}
+              className="h-16 object-contain"
+              style={{ maxWidth: '500px' }}
               loading="eager"
             />
           </Link>
