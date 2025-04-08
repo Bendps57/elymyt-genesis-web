@@ -51,14 +51,11 @@ const Navbar = () => {
             className="font-bold flex items-center space-x-2"
           >
             <img 
-              src="/logo.png" 
+              src="https://i.imgur.com/EZdv9wH.jpeg" 
               alt="Logo" 
-              className="h-8 object-contain" 
-              style={{ maxWidth: '100px' }}
-              onError={(e) => {
-                console.error("Logo failed to load");
-                e.currentTarget.src = 'https://i.imgur.com/EZdv9wH.jpeg';
-              }}
+              className="h-10 object-contain mix-blend-multiply"
+              style={{ maxWidth: '120px', backgroundColor: 'transparent' }}
+              loading="eager"
             />
           </Link>
 
