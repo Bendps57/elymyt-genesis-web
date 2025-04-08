@@ -33,6 +33,9 @@ const Footer = () => {
   
   return (
     <footer className="relative">
+      {/* Séparateur stylisé au-dessus du logo */}
+      <div className="h-4 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink"></div>
+      
       {/* Section signature avec le logo */}
       <div className="bg-gradient-to-br from-elimyt-blue/20 via-elimyt-purple/20 to-elimyt-pink/20 pt-16 pb-8 relative overflow-hidden">
         <div className="container mx-auto px-4 flex flex-col items-center justify-center relative z-10">
@@ -57,7 +60,7 @@ const Footer = () => {
         </div>
       </div>
       
-      {/* Séparateur stylisé */}
+      {/* Séparateur stylisé en-dessous du logo */}
       <div className="h-4 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink"></div>
       
       {/* Main footer content */}
