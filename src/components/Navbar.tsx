@@ -7,6 +7,8 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   const navItems = [
@@ -20,16 +22,30 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      const currentScrollY = window.scrollY;
+      
+      // Détermine si l'utilisateur scrolle vers le haut ou vers le bas
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scroll vers le bas - cacher la navbar
+        setVisible(false);
+      } else {
+        // Scroll vers le haut - montrer la navbar
+        setVisible(true);
+      }
+      
+      // Détermine si la navbar doit changer d'apparence (fond, shadow, etc)
+      if (currentScrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+      
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Close mobile menu when changing route
   useEffect(() => {
@@ -42,7 +58,7 @@ const Navbar = () => {
         scrolled
           ? "py-0.5 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
           : "py-1 bg-transparent"
-      }`}
+      } ${visible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
