@@ -47,7 +47,7 @@ const PortfolioPage = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <section className="pt-32 pb-20">
+      <section className="pt-48 pb-20">
         <div className="container mx-auto px-4 md:px-6">
           <div ref={headerRef}>
             <PortfolioHeader isVisible={isVisible} />
