@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   const navItems = [
     { name: "Accueil", href: "/" },
@@ -59,7 +61,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center bg-white dark:bg-elimyt-dark">
           <Link
             to="/"
-            className="text-2xl font-bold flex items-center space-x-2"
+            className="text-2xl font-bold flex items-center space-x-2 relative z-50"
           >
             <img src="https://i.imgur.com/A6fX34u.png" alt="eLimyt" className="h-8" />
           </Link>
@@ -92,7 +94,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden flex items-center"
+            className="md:hidden flex items-center relative z-50"
             onClick={toggleMenu}
             aria-label="Toggle mobile menu"
           >
