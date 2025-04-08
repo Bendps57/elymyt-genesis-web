@@ -35,19 +35,15 @@ const Footer = () => {
     <footer className="bg-elimyt-dark text-white pt-16 pb-8 relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
-            <Link to="/" className="text-2xl mb-4 inline-block">
+          <div className="flex items-start justify-start">
+            <Link to="/" className="text-2xl inline-block">
               <img 
                 src="https://i.imgur.com/Dre52Cp.png" 
                 alt="Logo eLimyt" 
-                className="h-72 object-contain mb-4"
+                className="h-72 object-contain"
                 loading="lazy"
               />
             </Link>
-            <p className="text-white/70 mb-6">
-              Agence web spécialisée dans la création de sites internet modernes, 
-              performants et à prix attractifs.
-            </p>
           </div>
           
           <div>
