@@ -36,8 +36,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <Link to="/" className="text-2xl font-bold mb-4 inline-block text-gradient">
-              eLimyt
+            <Link to="/" className="text-2xl mb-4 inline-block">
+              <img 
+                src="https://i.imgur.com/Dre52Cp.png" 
+                alt="Logo eLimyt" 
+                className="h-16 object-contain mb-4"
+                loading="lazy"
+              />
             </Link>
             <p className="text-white/70 mb-6">
               Agence web spécialisée dans la création de sites internet modernes, 

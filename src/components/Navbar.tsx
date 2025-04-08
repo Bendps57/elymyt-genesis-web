@@ -51,10 +51,10 @@ const Navbar = () => {
             className="font-bold flex items-center space-x-2"
           >
             <img 
-              src="https://i.imgur.com/EZdv9wH.jpeg" 
-              alt="Logo" 
-              className="h-10 object-contain mix-blend-multiply"
-              style={{ maxWidth: '120px', backgroundColor: 'transparent' }}
+              src="https://i.imgur.com/Dre52Cp.png" 
+              alt="Logo eLimyt" 
+              className="h-12 object-contain"
+              style={{ maxWidth: '150px' }}
               loading="eager"
             />
           </Link>
