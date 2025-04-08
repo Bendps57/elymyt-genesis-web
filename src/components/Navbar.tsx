@@ -36,12 +36,23 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Handle smooth scroll to contact form
+  const handleContactClick = (e) => {
+    if (location.pathname === "/contact") {
+      e.preventDefault();
+      const formElement = document.getElementById('contact-form');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? "py-3 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
-          : "py-6 bg-transparent"
+          : "py-6 bg-white/80 dark:bg-elimyt-dark/80 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -60,6 +71,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.href}
+                  onClick={item.href === "/contact" ? handleContactClick : undefined}
                   className={`text-sm font-medium transition-colors relative before:absolute before:bottom-0 before:left-0 before:h-0.5 before:bg-gradient hover:before:w-full before:w-0 before:transition-all before:duration-300 ${
                     location.pathname === item.href
                       ? "text-gradient before:w-full"
@@ -74,7 +86,7 @@ const Navbar = () => {
               asChild
               className="bg-gradient hover-scale"
             >
-              <Link to="/contact#contact-form">Démarrer un projet</Link>
+              <Link to="/contact#contact-form" onClick={handleContactClick}>Démarrer un projet</Link>
             </Button>
           </div>
 
@@ -94,13 +106,17 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 animate-fade-in">
-            <div className="flex flex-col space-y-4 py-4">
+          <div className="md:hidden fixed inset-0 top-[61px] bg-white/95 dark:bg-elimyt-dark/95 backdrop-blur-sm z-40 animate-fade-in">
+            <div className="flex flex-col space-y-4 py-6 px-4 h-full">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-base font-medium p-2 rounded-md transition-colors ${
+                  onClick={(e) => {
+                    if (item.href === "/contact") handleContactClick(e);
+                    setIsOpen(false);
+                  }}
+                  className={`text-base font-medium p-3 rounded-md transition-colors ${
                     location.pathname === item.href
                       ? "text-gradient bg-accent/10"
                       : "text-foreground/80 hover:text-foreground hover:bg-accent/5"
@@ -111,9 +127,10 @@ const Navbar = () => {
               ))}
               <Button
                 asChild
-                className="bg-gradient"
+                className="bg-gradient mt-4"
+                onClick={() => setIsOpen(false)}
               >
-                <Link to="/contact#contact-form">Démarrer un projet</Link>
+                <Link to="/contact#contact-form" onClick={handleContactClick}>Démarrer un projet</Link>
               </Button>
             </div>
           </div>

@@ -1,9 +1,24 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const CallToActionSection = () => {
+  const navigate = useNavigate();
+  
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    navigate("/contact");
+    
+    // Adding a small delay to ensure the DOM has loaded before scrolling
+    setTimeout(() => {
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+  
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-elimyt-blue/10 via-elimyt-purple/10 to-elimyt-pink/10">
       <div className="container mx-auto px-4">
@@ -30,19 +45,15 @@ const CallToActionSection = () => {
             <p className="text-sm text-foreground/70 mb-4">
               Economisez 87% - Offre limitée dans le temps
             </p>
-            <Button asChild className="btn-primary text-lg py-6 w-full animate-pulse-soft group" size="lg">
-              <Link to="/contact#contact-form" onClick={() => { 
-                // Adding a small delay to ensure the DOM has loaded before scrolling
-                setTimeout(() => {
-                  const contactForm = document.getElementById('contact-form');
-                  if (contactForm) {
-                    contactForm.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }, 100);
-              }}>
+            <Button 
+              asChild 
+              className="btn-primary text-lg py-6 w-full animate-pulse-soft group" 
+              size="lg"
+            >
+              <a href="/contact#contact-form" onClick={handleContactClick}>
                 Je veux mon site maintenant
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
             </Button>
             <div className="flex justify-center mt-4 gap-2 text-sm text-foreground/70">
               <CheckCircle className="h-4 w-4 text-primary" />

@@ -9,7 +9,7 @@ import CallToActionSection from "./sections/CallToActionSection";
 
 const LandingPage = () => {
   return (
-    <div className="mt-16">
+    <div>
       <HeroSection />
       <BenefitsSection />
       <BeforeAfterSection />

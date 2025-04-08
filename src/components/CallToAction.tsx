@@ -1,12 +1,13 @@
 
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const CallToAction = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +26,19 @@ const CallToAction = () => {
     
     return () => observer.disconnect();
   }, []);
+  
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    navigate("/contact");
+    
+    // Adding a small delay to ensure the DOM has loaded before scrolling
+    setTimeout(() => {
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
   
   const benefits = [
     "Garantie de satisfaction",
@@ -86,13 +100,13 @@ const CallToAction = () => {
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 font-medium px-8 py-6 text-lg hover-scale"
             >
-              <Link to="/contact#contact-form">
+              <a href="/contact#contact-form" onClick={handleContactClick}>
                 Démarrez votre projet maintenant
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             <p className="mt-4 text-white/80 text-sm">
-              Ou <Link to="/contact#contact-form" className="underline">contactez-nous</Link> pour discuter de vos besoins spécifiques
+              Ou <a href="/contact" onClick={handleContactClick} className="underline">contactez-nous</a> pour discuter de vos besoins spécifiques
             </p>
           </div>
         </div>
