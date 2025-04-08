@@ -50,7 +50,7 @@ const Navbar = () => {
             to="/"
             className="text-2xl font-bold flex items-center space-x-2"
           >
-            {/* Logo and text removed from here */}
+            <img src="https://i.imgur.com/A6fX34u.png" alt="eLimyt" className="h-8" />
           </Link>
 
           {/* Desktop Navigation */}
