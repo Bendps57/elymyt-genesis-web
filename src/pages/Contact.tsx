@@ -28,7 +28,7 @@ const ContactPage = () => {
     return () => observer.disconnect();
   }, []);
   
-  // Scroll to the contact form section when the page loads with appropriate anchors
+  // Scroll to the contact form section when the page loads
   useEffect(() => {
     // Function to scroll to contact form with a slight delay to ensure DOM is ready
     const scrollToContactForm = () => {
@@ -39,11 +39,6 @@ const ContactPage = () => {
         }
       }, 300);
     };
-    
-    // Check if URL contains the contact-form anchor
-    if (window.location.hash === '#contact-form') {
-      scrollToContactForm();
-    }
     
     // Check for sessionStorage redirect instruction
     const shouldScrollToForm = sessionStorage.getItem('scrollToContactForm');
@@ -76,7 +71,7 @@ const ContactPage = () => {
         </div>
       </section>
       
-      <div id="formulaire-contact" ref={contactFormRef}>
+      <div ref={contactFormRef}>
         <ContactForm />
       </div>
       <Footer />

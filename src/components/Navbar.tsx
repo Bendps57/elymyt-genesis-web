@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -10,6 +10,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: "Accueil", href: "/" },
@@ -47,7 +48,7 @@ const Navbar = () => {
     if (location.pathname !== "/contact") {
       // Store the scroll intention and navigate
       sessionStorage.setItem('scrollToContactForm', 'true');
-      window.location.href = "/contact#contact-form";
+      navigate('/contact');
     } else {
       // Already on contact page, just scroll
       const formElement = document.getElementById('contact-form');
@@ -97,7 +98,7 @@ const Navbar = () => {
               asChild
               className="bg-gradient hover-scale"
             >
-              <Link to="/contact#contact-form" onClick={handleContactClick}>Démarrer un projet</Link>
+              <a href="#" onClick={handleContactClick}>Démarrer un projet</a>
             </Button>
           </div>
 
@@ -139,9 +140,8 @@ const Navbar = () => {
               <Button
                 asChild
                 className="bg-gradient mt-4"
-                onClick={handleContactClick}
               >
-                <a href="/contact#contact-form">Démarrer un projet</a>
+                <a href="#" onClick={handleContactClick}>Démarrer un projet</a>
               </Button>
             </div>
           </div>

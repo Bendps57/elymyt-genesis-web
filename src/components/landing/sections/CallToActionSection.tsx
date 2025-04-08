@@ -1,5 +1,5 @@
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
@@ -8,15 +8,10 @@ const CallToActionSection = () => {
   
   const handleContactClick = (e) => {
     e.preventDefault();
-    navigate("/contact");
     
-    // Adding a small delay to ensure the DOM has loaded before scrolling
-    setTimeout(() => {
-      const contactForm = document.getElementById('contact-form');
-      if (contactForm) {
-        contactForm.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    // Store the scroll intention and navigate
+    sessionStorage.setItem('scrollToContactForm', 'true');
+    navigate('/contact');
   };
   
   return (
@@ -46,14 +41,12 @@ const CallToActionSection = () => {
               Economisez 87% - Offre limitée dans le temps
             </p>
             <Button 
-              asChild 
               className="btn-primary text-lg py-6 w-full animate-pulse-soft group" 
               size="lg"
+              onClick={handleContactClick}
             >
-              <a href="/contact#contact-form" onClick={handleContactClick}>
-                Je veux mon site maintenant
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </a>
+              Je veux mon site maintenant
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
             <div className="flex justify-center mt-4 gap-2 text-sm text-foreground/70">
               <CheckCircle className="h-4 w-4 text-primary" />
