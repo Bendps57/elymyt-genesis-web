@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ArrowUp, Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -29,14 +29,6 @@ const Footer = () => {
     { name: "Mentions légales", href: "/legal" },
     { name: "Politique de confidentialité", href: "/privacy" },
     { name: "CGV", href: "/terms" }
-  ];
-  
-  const socialLinks = [
-    { icon: <Facebook size={20} />, href: "https://facebook.com", label: "Facebook" },
-    { icon: <Instagram size={20} />, href: "https://instagram.com", label: "Instagram" },
-    { icon: <Linkedin size={20} />, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: <Mail size={20} />, href: "mailto:contact@elimyt.com", label: "Email" },
-    { icon: <Phone size={20} />, href: "tel:+33612345678", label: "Téléphone" }
   ];
   
   return (
@@ -72,7 +64,7 @@ const Footer = () => {
       <div className="bg-elimyt-dark text-white pt-16 pb-8">
         <div className="container mx-auto px-4 md:px-6">
           {/* Footer grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* Brand section */}
             <div>
               <div className="mb-4 relative inline-block">
@@ -86,20 +78,18 @@ const Footer = () => {
                 performants et à prix attractifs.
               </p>
               
-              {/* Social media links */}
-              <div className="flex space-x-4 mb-6">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index} 
-                    href={social.href} 
-                    className="p-2 rounded-full bg-white/10 hover:bg-gradient-to-r from-elimyt-blue to-elimyt-pink transition-all duration-300 hover-scale" 
-                    aria-label={social.label}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {social.icon}
+              {/* Contact info instead of social links */}
+              <div className="mb-6">
+                <p className="text-white/70">
+                  <a href="mailto:contact@elimyt.com" className="hover:text-white transition-colors">
+                    contact@elimyt.com
                   </a>
-                ))}
+                </p>
+                <p className="text-white/70 mt-2">
+                  <a href="tel:+33612345678" className="hover:text-white transition-colors">
+                    +33 6 12 34 56 78
+                  </a>
+                </p>
               </div>
             </div>
             
@@ -123,44 +113,46 @@ const Footer = () => {
               </ul>
             </div>
             
-            {/* Company section */}
+            {/* Company and Legal sections combined */}
             <div>
-              <h3 className="text-lg font-bold mb-4 relative inline-block">
-                eLimyt
-                <div className="absolute -bottom-2 left-0 h-0.5 w-12 bg-gradient-to-r from-elimyt-purple to-elimyt-pink"></div>
-              </h3>
-              <ul className="space-y-3">
-                {company.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      to={item.href}
-                      className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-purple before:mr-0 hover:before:mr-1 before:transition-all"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            {/* Information section */}
-            <div>
-              <h3 className="text-lg font-bold mb-4 relative inline-block">
-                Informations
-                <div className="absolute -bottom-2 left-0 h-0.5 w-12 bg-gradient-to-r from-elimyt-blue to-elimyt-pink"></div>
-              </h3>
-              <ul className="space-y-3">
-                {legal.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      to={item.href}
-                      className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-blue before:mr-0 hover:before:mr-1 before:transition-all"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="mb-8">
+                <h3 className="text-lg font-bold mb-4 relative inline-block">
+                  eLimyt
+                  <div className="absolute -bottom-2 left-0 h-0.5 w-12 bg-gradient-to-r from-elimyt-purple to-elimyt-pink"></div>
+                </h3>
+                <ul className="space-y-3">
+                  {company.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        to={item.href}
+                        className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-purple before:mr-0 hover:before:mr-1 before:transition-all"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-bold mb-4 relative inline-block">
+                  Informations
+                  <div className="absolute -bottom-2 left-0 h-0.5 w-12 bg-gradient-to-r from-elimyt-blue to-elimyt-pink"></div>
+                </h3>
+                <ul className="space-y-3">
+                  {legal.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        to={item.href}
+                        className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-blue before:mr-0 hover:before:mr-1 before:transition-all"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={scrollToTop}
