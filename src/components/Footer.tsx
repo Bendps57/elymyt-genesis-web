@@ -21,7 +21,6 @@ const Footer = () => {
   const company = [
     { name: "À propos", href: "/about#top" },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Témoignages", href: "/#testimonials" },
     { name: "Contact", href: "/contact" }
   ];
   
@@ -80,20 +79,6 @@ const Footer = () => {
                 Agence web spécialisée dans la création de sites internet modernes, 
                 performants et à prix attractifs.
               </p>
-              
-              {/* Contact info instead of social links */}
-              <div className="mb-6">
-                <p className="text-white/70">
-                  <a href="mailto:contact@elimyt.com" className="hover:text-white transition-colors">
-                    contact@elimyt.com
-                  </a>
-                </p>
-                <p className="text-white/70 mt-2">
-                  <a href="tel:+33612345678" className="hover:text-white transition-colors">
-                    +33 6 12 34 56 78
-                  </a>
-                </p>
-              </div>
             </div>
             
             {/* Services section */}
