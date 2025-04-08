@@ -12,9 +12,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden">
+    <section className="py-12 md:py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mt-24">
+        <div className="max-w-3xl mx-auto text-center mt-12">
           <div className={`transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
               Transformez Votre <span className="text-gradient">Image Professionnelle</span> Avec un Site Web Premium en 7 Jours
