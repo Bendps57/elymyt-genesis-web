@@ -40,7 +40,7 @@ const Footer = () => {
               <img 
                 src="https://i.imgur.com/Dre52Cp.png" 
                 alt="Logo eLimyt" 
-                className="h-36 object-contain mb-4"
+                className="h-72 object-contain mb-4"
                 loading="lazy"
               />
             </Link>
