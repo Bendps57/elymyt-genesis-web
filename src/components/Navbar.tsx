@@ -58,6 +58,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
+        {/* This header bar will now always be visible, even when menu is open */}
         <div className="flex justify-between items-center bg-white dark:bg-elimyt-dark">
           <Link
             to="/"
@@ -92,7 +93,7 @@ const Navbar = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - always visible with z-50 */}
           <button
             className="md:hidden flex items-center relative z-50"
             onClick={toggleMenu}
@@ -106,9 +107,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation - Now with fully solid white background for the entire menu */}
+        {/* Mobile Navigation - Modified to position below the header */}
         {isOpen && (
-          <div className="md:hidden fixed inset-0 top-0 bg-white dark:bg-elimyt-dark z-40 pt-[61px]">
+          <div className="md:hidden fixed inset-0 top-[61px] bg-white dark:bg-elimyt-dark z-40 overflow-y-auto">
             <div className="flex flex-col space-y-4 py-6 px-4 h-full bg-white dark:bg-elimyt-dark">
               {navItems.map((item) => (
                 <Link
