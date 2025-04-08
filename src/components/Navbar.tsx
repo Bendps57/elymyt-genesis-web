@@ -7,8 +7,6 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   const navItems = [
@@ -22,30 +20,16 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Détermine si l'utilisateur scrolle vers le haut ou vers le bas
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scroll vers le bas - cacher la navbar
-        setVisible(false);
-      } else {
-        // Scroll vers le haut - montrer la navbar
-        setVisible(true);
-      }
-      
-      // Détermine si la navbar doit changer d'apparence (fond, shadow, etc)
-      if (currentScrollY > 50) {
+      if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
-      
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   // Close mobile menu when changing route
   useEffect(() => {
@@ -54,25 +38,19 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "py-0 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
-          : "py-0 bg-transparent"
-      } ${visible ? "translate-y-0" : "-translate-y-full"}`}
+          ? "py-3 bg-white/90 dark:bg-elimyt-dark/90 shadow-md backdrop-blur-md"
+          : "py-6 bg-transparent"
+      }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link
             to="/"
-            className="font-bold flex items-center"
+            className="text-2xl font-bold flex items-center space-x-2"
           >
-            <img 
-              src="https://i.imgur.com/Dre52Cp.png" 
-              alt="Logo eLimyt" 
-              className="h-64 object-contain"
-              style={{ maxWidth: '500px' }}
-              loading="eager"
-            />
+            <span className="text-gradient">eLimyt</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -94,8 +72,7 @@ const Navbar = () => {
             </div>
             <Button
               asChild
-              className="bg-gradient hover-scale py-1"
-              size="sm"
+              className="bg-gradient hover-scale"
             >
               <Link to="/contact#contact-form">Démarrer un projet</Link>
             </Button>
@@ -117,13 +94,13 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-2 animate-fade-in">
-            <div className="flex flex-col space-y-2 py-2">
+          <div className="md:hidden mt-4 animate-fade-in">
+            <div className="flex flex-col space-y-4 py-4">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-base font-medium p-1 rounded-md transition-colors ${
+                  className={`text-base font-medium p-2 rounded-md transition-colors ${
                     location.pathname === item.href
                       ? "text-gradient bg-accent/10"
                       : "text-foreground/80 hover:text-foreground hover:bg-accent/5"
@@ -134,8 +111,7 @@ const Navbar = () => {
               ))}
               <Button
                 asChild
-                className="bg-gradient py-1"
-                size="sm"
+                className="bg-gradient"
               >
                 <Link to="/contact#contact-form">Démarrer un projet</Link>
               </Button>

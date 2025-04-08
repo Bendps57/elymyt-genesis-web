@@ -13,7 +13,7 @@ const ServicesPage = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <section className="pt-48 pb-20 bg-muted">
+      <section className="pt-32 pb-20 bg-muted">
         <div className="container mx-auto px-4 md:px-6">
           <ServicesHeader />
           <MainServicesList />
