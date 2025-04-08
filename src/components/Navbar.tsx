@@ -104,9 +104,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Changed from bg-white/95 to bg-white for solid white background */}
         {isOpen && (
-          <div className="md:hidden fixed inset-0 top-[61px] bg-white/95 dark:bg-elimyt-dark/95 backdrop-blur-sm z-40 animate-fade-in">
+          <div className="md:hidden fixed inset-0 top-[61px] bg-white dark:bg-elimyt-dark z-40 animate-fade-in">
             <div className="flex flex-col space-y-4 py-6 px-4 h-full">
               {navItems.map((item) => (
                 <Link
