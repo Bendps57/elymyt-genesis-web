@@ -7,7 +7,6 @@ import BonusSection from "./sections/BonusSection";
 import FaqSection from "./sections/FaqSection";
 import CallToActionSection from "./sections/CallToActionSection";
 import Services from "../Services";
-import Portfolio from "../Portfolio";
 import { Helmet } from "react-helmet-async";
 
 const LandingPage = () => {
@@ -25,7 +24,6 @@ const LandingPage = () => {
         <BeforeAfterSection />
         <GuaranteesSection />
         <Services />
-        <Portfolio />
         <BonusSection />
         <FaqSection />
         <CallToActionSection />
