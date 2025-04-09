@@ -13,11 +13,11 @@ const PortfolioHeader = ({ isVisible }: PortfolioHeaderProps) => {
       }`}
     >
       <h1 className="text-4xl md:text-5xl font-bold mb-4">
-        Notre <span className="text-gradient">Portfolio</span> de Sites Web Professionnels
+        Notre <span className="text-gradient">Portfolio</span>
       </h1>
       <p className="text-lg text-foreground/70">
-        Découvrez nos réalisations de sites internet professionnels pour PME, artisans et commerçants. 
-        Notre agence web à Hayange a aidé ces entreprises à améliorer leur visibilité en ligne.
+        Découvrez nos réalisations récentes et comment nous avons aidé nos clients 
+        à atteindre leurs objectifs avec des solutions web sur mesure.
       </p>
     </div>
   );

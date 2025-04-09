@@ -28,13 +28,13 @@ const BenefitsSection = () => {
   const benefits = [
     {
       icon: <Globe className="h-6 w-6" />,
-      title: "Site Web PME Premium",
-      description: "Design élégant et professionnel qui reflète parfaitement l'identité de votre entreprise"
+      title: "Site Web Premium",
+      description: "Design élégant et professionnel qui reflète parfaitement votre identité de marque"
     },
     {
       icon: <Smartphone className="h-6 w-6" />,
       title: "100% Responsive",
-      description: "Site parfaitement adapté à tous les appareils: ordinateurs, tablettes et smartphones"
+      description: "Site parfaitement adapté à tous les appareils : ordinateurs, tablettes et smartphones"
     },
     {
       icon: <Clock className="h-6 w-6" />,
@@ -44,12 +44,12 @@ const BenefitsSection = () => {
     {
       icon: <Search className="h-6 w-6" />,
       title: "SEO Optimisé",
-      description: "Optimisation pour les moteurs de recherche pour une meilleure visibilité en ligne pour votre entreprise"
+      description: "Optimisation pour les moteurs de recherche pour une meilleure visibilité en ligne"
     },
     {
       icon: <Zap className="h-6 w-6" />,
       title: "Performance Maximale",
-      description: "Temps de chargement optimisé pour un site web professionnel et une expérience utilisateur fluide"
+      description: "Temps de chargement optimisé pour une expérience utilisateur fluide"
     },
     {
       icon: <Globe className="h-6 w-6" />,
@@ -64,7 +64,7 @@ const BenefitsSection = () => {
         <SectionTitle 
           title="Une Solution" 
           highlightedText="Complète" 
-          subtitle="Tout ce dont votre PME, commerce ou activité artisanale a besoin pour une visibilité en ligne optimale" 
+          subtitle="Tout ce dont vous avez besoin pour une présence en ligne professionnelle et efficace" 
           className="mb-12" 
         />
         

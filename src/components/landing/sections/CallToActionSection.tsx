@@ -19,10 +19,10 @@ const CallToActionSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Prêt à <span className="text-gradient">Améliorer la Visibilité en Ligne</span> de Votre Entreprise ?
+            Prêt à <span className="text-gradient">Transformer</span> Votre Présence En Ligne ?
           </h2>
           <p className="text-xl mb-8 text-foreground/80">
-            Ne laissez plus passer d'opportunités. Obtenez un site web professionnel pour PME, artisans et commerçants, livré en 7 jours.
+            Ne laissez plus passer d'opportunités. Obtenez un site web professionnel qui convertit, livré en 7 jours.
           </p>
           
           <div className="mb-8 p-4 bg-white dark:bg-elimyt-dark/40 rounded-lg border border-primary/20 shadow-lg">
@@ -38,14 +38,14 @@ const CallToActionSection = () => {
               </p>
             </div>
             <p className="text-sm text-foreground/70 mb-4">
-              Site internet pas cher - Offre limitée dans le temps
+              Economisez 87% - Offre limitée dans le temps
             </p>
             <Button 
               className="btn-primary text-lg py-6 w-full animate-pulse-soft group" 
               size="lg"
               onClick={handleContactClick}
             >
-              Je veux mon site web pour PME maintenant
+              Je veux mon site maintenant
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
             <div className="flex justify-center mt-4 gap-2 text-sm text-foreground/70">

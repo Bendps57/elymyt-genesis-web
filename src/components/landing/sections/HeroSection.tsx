@@ -17,27 +17,27 @@ const HeroSection = () => {
         <div className="max-w-3xl mx-auto text-center">
           <div className={`transition-all duration-700 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-              Création de <span className="text-gradient">Site Vitrine Professionnel</span> Pour PME et Artisans en 7 Jours
+              Transformez Votre <span className="text-gradient">Image Professionnelle</span> Avec un Site Web Premium en 7 Jours
             </h1>
             
             <div className="mb-6 p-4 bg-yellow-50 dark:bg-yellow-950/30 rounded-lg border border-yellow-200 dark:border-yellow-800">
               <p className="text-xl md:text-2xl font-medium text-yellow-800 dark:text-yellow-300">
-                Site internet <span className="text-3xl font-bold">249,90€</span>{" "}
+                Pour seulement <span className="text-3xl font-bold">249,90€</span>{" "}
                 <span className="text-lg line-through text-gray-500">2000€</span>
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-                Site web pas cher - Seulement 5 places disponibles ce mois-ci
+                Offre limitée - Seulement 5 places disponibles ce mois-ci
               </p>
             </div>
             
             <p className="text-lg md:text-xl text-foreground/80 mb-8">
-              Boostez la <strong>visibilité en ligne</strong> de votre entreprise avec un site web professionnel clé en main, développé par notre <strong>agence web à Hayange</strong>.
+              Boostez votre crédibilité et captez plus de clients avec un site web professionnel clé en main, livré en 7 jours maximum.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button asChild className="btn-primary text-lg py-6 animate-pulse-soft group" size="lg">
                 <Link to="/contact#contact-form">
-                  Obtenir mon site vitrine professionnel
+                  Je veux mon site maintenant
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

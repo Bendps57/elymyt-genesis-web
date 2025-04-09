@@ -31,11 +31,11 @@ const ServicesHeader = () => {
       }`}
     >
       <h1 className="text-4xl md:text-5xl font-bold mb-4">
-        Nos <span className="text-gradient">Services</span> de Création de Site Web
+        Nos <span className="text-gradient">Services</span>
       </h1>
       <p className="text-lg text-foreground/70">
-        Des solutions web sur mesure pour PME, artisans et commerçants. 
-        Notre agence web nationale vous accompagne dans l'amélioration de votre visibilité en ligne avec un site internet professionnel à prix abordable.
+        Des solutions web sur mesure pour répondre à tous vos besoins digitaux. 
+        Nous vous accompagnons de la conception à la mise en ligne de votre projet.
       </p>
     </div>
   );

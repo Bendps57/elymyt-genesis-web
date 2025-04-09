@@ -1,13 +1,14 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
 
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://elimyt.com/sitemap.xml
-
-# Don't index these paths
-Disallow: /404
-Disallow: /api/
-
-# Preserve user privacy
-Disallow: /private/
