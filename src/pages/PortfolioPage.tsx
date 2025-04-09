@@ -8,6 +8,7 @@ import ProjectCard from "@/components/portfolio/ProjectCard";
 import ProjectDetails from "@/components/portfolio/ProjectDetails";
 import PortfolioHeader from "@/components/portfolio/PortfolioHeader";
 import type { Project } from "@/data/portfolioProjects";
+import { Helmet } from "react-helmet";
 
 const PortfolioPage = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects);
@@ -54,6 +55,12 @@ const PortfolioPage = () => {
   
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Portfolio | Exemples de Sites Web pour PME & Artisans | eLimyt</title>
+        <meta name="description" content="Découvrez nos réalisations de sites internet professionnels pour PME, artisans et commerçants. Exemples de sites web créés par notre agence web à Hayange." />
+        <link rel="canonical" href="https://elimyt.com/portfolio" />
+      </Helmet>
+      
       <Navbar />
       
       <section className="pt-32 pb-20">

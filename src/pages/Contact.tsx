@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import ChatWidget from "../components/chat/ChatWidget";
+import { Helmet } from "react-helmet";
 
 const ContactPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,6 +51,12 @@ const ContactPage = () => {
   
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contact | Agence Web Nationale pour Création de Site Vitrine | eLimyt</title>
+        <meta name="description" content="Contactez notre agence web à Hayange pour obtenir votre site internet professionnel à prix abordable. Devis gratuit pour PME, artisans et commerçants." />
+        <link rel="canonical" href="https://elimyt.com/contact" />
+      </Helmet>
+      
       <Navbar />
       
       <section className="pt-32 pb-12">
@@ -61,11 +68,11 @@ const ContactPage = () => {
             }`}
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Contactez <span className="text-gradient">Nous</span>
+              Contactez <span className="text-gradient">Notre Agence Web</span>
             </h1>
             <p className="text-lg text-foreground/70">
-              Discutons de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs. 
-              Notre équipe est prête à répondre à toutes vos questions.
+              Discutons de votre projet de site internet professionnel pour votre PME, commerce ou activité artisanale.
+              Notre équipe à Hayange est prête à améliorer votre visibilité en ligne.
             </p>
           </div>
         </div>
@@ -77,7 +84,7 @@ const ContactPage = () => {
       <Footer />
       
       {/* Widget de chat WhatsApp */}
-      <ChatWidget initialMessage="Bonjour, je souhaite discuter de mon projet avec eLimyt..." />
+      <ChatWidget initialMessage="Bonjour, je souhaite discuter de mon projet de site web avec eLimyt..." />
     </div>
   );
 };

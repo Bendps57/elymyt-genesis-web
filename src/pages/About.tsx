@@ -6,6 +6,7 @@ import { Zap, Target, Users, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   const fadeIn = {
@@ -25,6 +26,12 @@ const About = () => {
 
   return (
     <div className="min-h-screen" id="top">
+      <Helmet>
+        <title>À Propos | Agence Web à Hayange | eLimyt</title>
+        <meta name="description" content="Découvrez eLimyt, votre agence web à Hayange spécialisée dans la création de sites internet professionnels pour PME, artisans et commerçants." />
+        <link rel="canonical" href="https://elimyt.com/about" />
+      </Helmet>
+      
       <Navbar />
       
       <section className="pt-32 pb-20">
@@ -40,7 +47,7 @@ const About = () => {
             </h1>
             
             <p className="text-lg text-center text-muted-foreground mb-16">
-              Une nouvelle vision du web, centrée sur l'impact et la performance
+              Agence web nationale basée à Hayange, spécialisée dans la création de sites internet pour PME
             </p>
             
             <div className="bg-white dark:bg-elimyt-dark/40 rounded-2xl shadow-lg overflow-hidden mb-16">
@@ -69,14 +76,14 @@ const About = () => {
                   <p className="text-lg mb-4">
                     Chaque site qu'on crée, c'est une passerelle entre une idée… et une marque qui attire, vend, fidélise.
                     Pas besoin d'un budget à 5 chiffres pour exister en ligne.
-                    À 249,90€, on livre une image qui en vaut 2000.
+                    À 249,90€, on livre un site internet pas cher qui en vaut 2000.
                   </p>
                 </div>
                 
                 <div className="flex items-center gap-4 p-4 bg-primary/5 dark:bg-primary/10 rounded-lg border border-primary/20">
                   <MapPin className="h-6 w-6 text-primary shrink-0" />
                   <p className="text-lg m-0">
-                    <span className="font-bold">🔥 Basée à Hayange</span>, notre agence propulse des indépendants, des commerçants et des visionnaires vers une présence digitale cohérente, stylée et prête à scaler.
+                    <span className="font-bold">🔥 Basée à Hayange</span>, notre agence web propulse des indépendants, des commerçants et des visionnaires vers une présence digitale cohérente, stylée et prête à scaler.
                   </p>
                 </div>
                 
@@ -96,7 +103,7 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Notre Vision</h3>
                 <p className="text-foreground/80">
-                  Démocratiser l'accès à une présence en ligne professionnelle, percutante et performante.
+                  Démocratiser l'accès à une présence en ligne professionnelle pour PME, artisans et commerçants.
                 </p>
               </div>
               
@@ -106,7 +113,7 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Notre Mission</h3>
                 <p className="text-foreground/80">
-                  Créer des sites web qui combinent esthétique, fonctionnalité et ROI mesurable.
+                  Créer des sites web qui augmentent la visibilité en ligne de votre entreprise avec un ROI mesurable.
                 </p>
               </div>
               
