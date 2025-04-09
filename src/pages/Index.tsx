@@ -3,7 +3,7 @@ import LandingPage from "../components/landing/LandingPage";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"; // Updated import
 
 const Index = () => {
   // Cette fonction vérifie s'il y a une ancre dans l'URL et fait défiler jusqu'à cette section

@@ -6,7 +6,7 @@ import { Zap, Target, Users, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"; // Updated import
 
 const About = () => {
   const fadeIn = {

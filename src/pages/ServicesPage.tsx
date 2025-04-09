@@ -7,7 +7,7 @@ import ServicesHeader from "../components/services/ServicesHeader";
 import MainServicesList from "../components/services/MainServicesList";
 import AdditionalServicesHeader from "../components/services/AdditionalServicesHeader";
 import AdditionalServicesList from "../components/services/AdditionalServicesList";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"; // Updated import
 
 const ServicesPage = () => {
   // Assurer que la page charge en haut quand on arrive depuis un lien du footer

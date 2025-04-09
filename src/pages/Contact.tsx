@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import ChatWidget from "../components/chat/ChatWidget";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"; // Updated import
 
 const ContactPage = () => {
   const [isVisible, setIsVisible] = useState(false);

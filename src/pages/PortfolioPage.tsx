@@ -8,7 +8,7 @@ import ProjectCard from "@/components/portfolio/ProjectCard";
 import ProjectDetails from "@/components/portfolio/ProjectDetails";
 import PortfolioHeader from "@/components/portfolio/PortfolioHeader";
 import type { Project } from "@/data/portfolioProjects";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"; // Updated import
 
 const PortfolioPage = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects);
