@@ -6,6 +6,7 @@ import { Zap, Target, Users, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const fadeIn = {
@@ -25,6 +26,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen" id="top">
+      <Helmet>
+        <title>À Propos d'eLymit | Agence Web à Hayange | Création de Sites Professionnels</title>
+        <meta name="description" content="Découvrez eLymit, votre agence web à Hayange spécialisée dans la création de sites internet professionnels à prix mini pour PME, artisans et commerçants." />
+        <meta name="keywords" content="agence web Hayange, création site web professionnel, site vitrine PME, à propos eLymit" />
+        <link rel="canonical" href="https://elymit.com/about" />
+      </Helmet>
+      
       <Navbar />
       
       <section className="pt-32 pb-20">

@@ -8,6 +8,7 @@ import ProjectCard from "@/components/portfolio/ProjectCard";
 import ProjectDetails from "@/components/portfolio/ProjectDetails";
 import PortfolioHeader from "@/components/portfolio/PortfolioHeader";
 import type { Project } from "@/data/portfolioProjects";
+import { Helmet } from "react-helmet-async";
 
 const PortfolioPage = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects);
@@ -54,6 +55,13 @@ const PortfolioPage = () => {
   
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Portfolio de Sites Web Professionnels | Réalisations eLymit | Agence Web Hayange</title>
+        <meta name="description" content="Découvrez nos réalisations de sites web professionnels pour PME, artisans et commerçants. Exemples de sites vitrines et e-commerce créés par eLymit." />
+        <meta name="keywords" content="portfolio sites web, réalisations site internet, exemples sites vitrines, agence web Hayange" />
+        <link rel="canonical" href="https://elymit.com/portfolio" />
+      </Helmet>
+      
       <Navbar />
       
       <section className="pt-32 pb-20">

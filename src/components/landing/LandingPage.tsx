@@ -6,18 +6,31 @@ import GuaranteesSection from "./sections/GuaranteesSection";
 import BonusSection from "./sections/BonusSection";
 import FaqSection from "./sections/FaqSection";
 import CallToActionSection from "./sections/CallToActionSection";
+import Services from "../Services";
+import Portfolio from "../Portfolio";
+import { Helmet } from "react-helmet-async";
 
 const LandingPage = () => {
   return (
-    <div>
-      <HeroSection />
-      <BenefitsSection />
-      <BeforeAfterSection />
-      <GuaranteesSection />
-      <BonusSection />
-      <FaqSection />
-      <CallToActionSection />
-    </div>
+    <>
+      <Helmet>
+        <title>eLymit - Création de Sites Web Professionnels à Prix Mini | Agence Web Hayange</title>
+        <meta name="description" content="Agence web à Hayange spécialisée en création de sites vitrines professionnels à partir de 249,90€. Sites web rapides et optimisés pour PME, artisans et commerçants." />
+        <meta name="keywords" content="création site vitrine professionnel, site internet pas cher, site web pour PME, agence web Hayange" />
+        <link rel="canonical" href="https://elymit.com" />
+      </Helmet>
+      <div>
+        <HeroSection />
+        <BenefitsSection />
+        <BeforeAfterSection />
+        <GuaranteesSection />
+        <Services />
+        <Portfolio />
+        <BonusSection />
+        <FaqSection />
+        <CallToActionSection />
+      </div>
+    </>
   );
 };
 

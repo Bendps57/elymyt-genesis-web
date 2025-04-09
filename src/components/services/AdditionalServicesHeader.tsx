@@ -8,7 +8,7 @@ const AdditionalServicesHeader = () => {
         Services <span className="text-gradient">Additionnels</span>
       </h2>
       <p className="text-foreground/70">
-        Complétez votre projet web avec ces services complémentaires pour maximiser votre présence en ligne.
+        Complétez votre projet web avec ces services complémentaires pour maximiser votre présence en ligne et améliorer votre visibilité sur internet.
       </p>
     </div>
   );

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import ChatWidget from "../components/chat/ChatWidget";
+import { Helmet } from "react-helmet-async";
 
 const ContactPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,6 +51,13 @@ const ContactPage = () => {
   
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contactez notre Agence Web à Hayange | Devis Site Internet | eLymit</title>
+        <meta name="description" content="Contactez eLymit, votre agence web à Hayange. Demandez un devis gratuit pour la création de votre site internet professionnel à prix mini." />
+        <meta name="keywords" content="contact agence web Hayange, devis site internet, création site web professionnel" />
+        <link rel="canonical" href="https://elymit.com/contact" />
+      </Helmet>
+      
       <Navbar />
       
       <section className="pt-32 pb-12">
@@ -64,7 +72,7 @@ const ContactPage = () => {
               Contactez <span className="text-gradient">Nous</span>
             </h1>
             <p className="text-lg text-foreground/70">
-              Discutons de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs. 
+              Discutons de votre projet de site web et voyons comment nous pouvons vous aider à atteindre vos objectifs. 
               Notre équipe est prête à répondre à toutes vos questions.
             </p>
           </div>
@@ -77,7 +85,7 @@ const ContactPage = () => {
       <Footer />
       
       {/* Widget de chat WhatsApp */}
-      <ChatWidget initialMessage="Bonjour, je souhaite discuter de mon projet avec eLimyt..." />
+      <ChatWidget initialMessage="Bonjour, je souhaite discuter de mon projet de site web avec eLimyt..." />
     </div>
   );
 };
