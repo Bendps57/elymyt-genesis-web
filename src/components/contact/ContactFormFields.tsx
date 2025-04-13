@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,7 +20,7 @@ const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: Contact
     <form 
       ref={emailFormRef} 
       onSubmit={handleSubmit} 
-      action="https://formsubmit.co/ben.wemmert@gmail.com"
+      action="https://formsubmit.co/contact@elimyt.com"
       method="POST"
       className="space-y-5"
     >

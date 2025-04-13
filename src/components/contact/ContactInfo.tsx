@@ -5,7 +5,7 @@ export const contactInfoData = [
   {
     icon: <Mail className="h-5 w-5" />,
     label: "Email",
-    value: "ben.wemmert@gmail.com"
+    value: "contact@elimyt.com"
   },
   {
     icon: <MessageSquare className="h-5 w-5" />,
