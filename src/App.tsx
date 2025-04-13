@@ -15,6 +15,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import About from "./pages/About";
 import ChatWidget from "./components/chat/ChatWidget";
+import ConsentBanner from "./components/ui/consent-banner";
 
 const queryClient = new QueryClient();
 
@@ -27,18 +28,32 @@ const ChatWidgetWrapper = () => {
   return showChat ? <ChatWidget /> : null;
 };
 
-// Composant pour inclure les Google Analytics sur toutes les pages
+// Composant pour inclure les Google Analytics sur toutes les pages avec mode Consentement
 const GoogleAnalytics = () => {
   return (
     <Helmet>
-      {/* Google tag (gtag.js) */}
+      {/* Google tag (gtag.js) avec configuration du mode Consentement */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-2JEBHDGKR6"></script>
       <script>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-2JEBHDGKR6');
+          
+          // Configuration par défaut : attendre le consentement
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted'
+          });
+          
+          // Configuration de GA4 avec paramètres de région
+          gtag('config', 'G-2JEBHDGKR6', {
+            'anonymize_ip': true,
+            'region': 'europe'
+          });
         `}
       </script>
     </Helmet>
@@ -66,6 +81,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <ChatWidgetWrapper />
+          <ConsentBanner onConsent={() => {}} />
         </BrowserRouter>
       </TooltipProvider>
     </HelmetProvider>
