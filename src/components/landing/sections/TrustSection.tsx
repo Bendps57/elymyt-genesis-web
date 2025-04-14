@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ExternalLink, Play } from "lucide-react";
 import SectionTitle from "@/components/common/SectionTitle";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 type VideoTestimonial = {
   id: string;
@@ -62,6 +63,11 @@ const TrustSection = () => {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLIFrameElement>(null);
 
+  // Reset playing state when active video changes
+  useEffect(() => {
+    setPlaying(false);
+  }, [activeVideo.id]);
+
   const handleThumbnailClick = (testimonial: VideoTestimonial) => {
     setActiveVideo(testimonial);
     setPlaying(false);
@@ -70,8 +76,8 @@ const TrustSection = () => {
   const handlePlayClick = () => {
     setPlaying(true);
     if (videoRef.current) {
-      // Ajouter les paramètres nécessaires pour les shorts YouTube
-      videoRef.current.src = `${activeVideo.videoUrl}?autoplay=1&shorts=0`;
+      // Ensure we're using the correct parameters for YouTube shorts
+      videoRef.current.src = `${activeVideo.videoUrl}?autoplay=1&rel=0&controls=1&showinfo=0&shorts=0`;
     }
   };
 
@@ -88,34 +94,36 @@ const TrustSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Main featured video */}
           <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden card-hover">
-            <div className="relative aspect-video bg-muted">
-              {playing ? (
-                <iframe
-                  ref={videoRef}
-                  src={activeVideo.videoUrl}
-                  title={`Témoignage de ${activeVideo.clientName}`}
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <>
-                  <img
-                    src={activeVideo.thumbnailUrl}
-                    alt={`Témoignage de ${activeVideo.clientName}`}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                    <button
-                      onClick={handlePlayClick}
-                      className="bg-white/90 hover:bg-white text-elimyt-blue rounded-full p-6 transition-transform hover:scale-110"
-                      aria-label="Lire la vidéo"
-                    >
-                      <Play className="h-10 w-10 fill-elimyt-blue" />
-                    </button>
-                  </div>
-                </>
-              )}
+            <div className="relative">
+              <AspectRatio ratio={16/9} className="bg-muted">
+                {playing ? (
+                  <iframe
+                    ref={videoRef}
+                    src={`${activeVideo.videoUrl}?rel=0&controls=1&showinfo=0&shorts=0`}
+                    title={`Témoignage de ${activeVideo.clientName}`}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <>
+                    <img
+                      src={activeVideo.thumbnailUrl}
+                      alt={`Témoignage de ${activeVideo.clientName}`}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <button
+                        onClick={handlePlayClick}
+                        className="bg-white/90 hover:bg-white text-elimyt-blue rounded-full p-6 transition-transform hover:scale-110"
+                        aria-label="Lire la vidéo"
+                      >
+                        <Play className="h-10 w-10 fill-elimyt-blue" />
+                      </button>
+                    </div>
+                  </>
+                )}
+              </AspectRatio>
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold mb-2">{activeVideo.title}</h3>
@@ -133,24 +141,26 @@ const TrustSection = () => {
 
           {/* Second featured video */}
           <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden card-hover">
-            <div className="relative aspect-video bg-muted">
-              <img
-                src={testimonials[1].thumbnailUrl}
-                alt={`Témoignage de ${testimonials[1].clientName}`}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                <button
-                  onClick={() => {
-                    setActiveVideo(testimonials[1]);
-                    handlePlayClick();
-                  }}
-                  className="bg-white/90 hover:bg-white text-elimyt-blue rounded-full p-6 transition-transform hover:scale-110"
-                  aria-label="Lire la vidéo"
-                >
-                  <Play className="h-10 w-10 fill-elimyt-blue" />
-                </button>
-              </div>
+            <div className="relative">
+              <AspectRatio ratio={16/9} className="bg-muted">
+                <img
+                  src={testimonials[1].thumbnailUrl}
+                  alt={`Témoignage de ${testimonials[1].clientName}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                  <button
+                    onClick={() => {
+                      setActiveVideo(testimonials[1]);
+                      handlePlayClick();
+                    }}
+                    className="bg-white/90 hover:bg-white text-elimyt-blue rounded-full p-6 transition-transform hover:scale-110"
+                    aria-label="Lire la vidéo"
+                  >
+                    <Play className="h-10 w-10 fill-elimyt-blue" />
+                  </button>
+                </div>
+              </AspectRatio>
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold mb-2">{testimonials[1].title}</h3>
