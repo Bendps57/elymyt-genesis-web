@@ -21,14 +21,14 @@ type VideoTestimonial = {
   title: string;
 };
 
-// Example testimonial data (replace with actual data when available)
+// Mise à jour des données de témoignage avec la vraie vidéo pour Jean Dupont
 const testimonials: VideoTestimonial[] = [
   {
     id: "test1",
     clientName: "Jean Dupont",
     businessName: "Atelier Dupont",
     thumbnailUrl: "https://placehold.co/600x400/3563E9/FFFFFF/png?text=Témoignage+Jean+Dupont",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video URL
+    videoUrl: "https://www.youtube.com/embed/owIgLNAfIbw", // Nouvelle URL pour le short YouTube
     title: "Comment j'ai multiplié ma clientèle par 3 grâce à mon nouveau site web",
   },
   {
@@ -70,7 +70,8 @@ const TrustSection = () => {
   const handlePlayClick = () => {
     setPlaying(true);
     if (videoRef.current) {
-      videoRef.current.src = `${activeVideo.videoUrl}?autoplay=1`;
+      // Ajouter les paramètres nécessaires pour les shorts YouTube
+      videoRef.current.src = `${activeVideo.videoUrl}?autoplay=1&shorts=0`;
     }
   };
 
