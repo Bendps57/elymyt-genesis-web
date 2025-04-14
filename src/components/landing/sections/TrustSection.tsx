@@ -22,15 +22,15 @@ type VideoTestimonial = {
   title: string;
 };
 
-// Mise à jour des données de témoignage avec la vraie vidéo pour Jean Dupont
+// Mise à jour des données de témoignage avec le nouveau nom et la nouvelle entreprise
 const testimonials: VideoTestimonial[] = [
   {
     id: "test1",
-    clientName: "Jean Dupont",
-    businessName: "Atelier Dupont",
-    thumbnailUrl: "https://placehold.co/600x400/3563E9/FFFFFF/png?text=Témoignage+Jean+Dupont",
-    videoUrl: "https://www.youtube.com/embed/owIgLNAfIbw", // Nouvelle URL pour le short YouTube
-    title: "Comment j'ai multiplié ma clientèle par 3 grâce à mon nouveau site web",
+    clientName: "Marie AUBRY",
+    businessName: "Victoria Beauty",
+    thumbnailUrl: "https://placehold.co/600x400/3563E9/FFFFFF/png?text=Témoignage+Marie+AUBRY",
+    videoUrl: "https://www.youtube.com/embed/owIgLNAfIbw", // URL pour le short YouTube
+    title: "Je partais de zéro, et aujourd'hui, je refuse des clients.",
   },
   {
     id: "test2",
@@ -175,43 +175,6 @@ const TrustSection = () => {
               </Button>
             </div>
           </div>
-        </div>
-
-        {/* Thumbnails carousel */}
-        <div className="mt-12">
-          <h3 className="text-xl font-bold mb-6 text-center">Plus de témoignages</h3>
-          <Carousel className="max-w-5xl mx-auto">
-            <CarouselContent>
-              {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div 
-                    className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all border-2 hover:shadow-md ${
-                      activeVideo.id === testimonial.id 
-                        ? "border-primary" 
-                        : "border-transparent"
-                    }`}
-                    onClick={() => handleThumbnailClick(testimonial)}
-                  >
-                    <img
-                      src={testimonial.thumbnailUrl}
-                      alt={`Témoignage de ${testimonial.clientName}`}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                      <Play className="h-8 w-8 text-white" />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
-                      <p className="text-white text-xs font-medium truncate">
-                        {testimonial.clientName}
-                      </p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-1" />
-            <CarouselNext className="right-1" />
-          </Carousel>
         </div>
       </div>
     </section>
