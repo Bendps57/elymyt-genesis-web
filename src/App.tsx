@@ -16,6 +16,11 @@ import Terms from "./pages/Terms";
 import About from "./pages/About";
 import ChatWidget from "./components/chat/ChatWidget";
 import ConsentBanner from "./components/ui/consent-banner";
+import MaintenancePage from "./components/maintenance/MaintenancePage";
+
+// Flag pour contrôler l'affichage de la page de maintenance
+// Mettre à false pour revenir à la landing page normale
+const MAINTENANCE_MODE = true;
 
 const queryClient = new QueryClient();
 
@@ -60,6 +65,7 @@ const GoogleAnalytics = () => {
   );
 };
 
+// Composant d'application principale modifié pour gérer le mode maintenance
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
@@ -68,20 +74,28 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <GoogleAnalytics />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/legal" element={<Legal />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/about" element={<About />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <ChatWidgetWrapper />
-          <ConsentBanner onConsent={() => {}} />
+          {MAINTENANCE_MODE ? (
+            <Routes>
+              <Route path="*" element={<MaintenancePage />} />
+            </Routes>
+          ) : (
+            <>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/portfolio" element={<PortfolioPage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/legal" element={<Legal />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/about" element={<About />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <ChatWidgetWrapper />
+              <ConsentBanner onConsent={() => {}} />
+            </>
+          )}
         </BrowserRouter>
       </TooltipProvider>
     </HelmetProvider>
