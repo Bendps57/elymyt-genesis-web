@@ -29,7 +29,7 @@ const Index = () => {
   return (
     <main>
       <Helmet>
-        <title>eLymit - Création de Sites Web Professionnels à Prix Mini | Agence Web Hayange</title>
+        <title>eLimyt - Création de Sites Web Professionnels à Prix Mini | Agence Web Hayange</title>
         <meta name="description" content="Agence web à Hayange spécialisée en création de sites vitrines professionnels à partir de 249,90€. Sites web rapides et optimisés pour PME, artisans et commerçants." />
         <meta name="keywords" content="création site vitrine professionnel, site internet pas cher, site web pour PME, agence web Hayange" />
         <link rel="canonical" href="https://elymit.com" />
@@ -44,3 +44,4 @@ const Index = () => {
 };
 
 export default Index;
+
