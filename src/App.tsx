@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,7 +19,7 @@ import MaintenancePage from "./components/maintenance/MaintenancePage";
 
 // Flag pour contrôler l'affichage de la page de maintenance
 // Mettre à false pour revenir à la landing page normale
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 
 const queryClient = new QueryClient();
 
