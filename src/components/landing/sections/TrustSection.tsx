@@ -25,7 +25,6 @@ const TrustSection = () => {
 
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Store the scroll intention and navigate
     sessionStorage.setItem('scrollToContactForm', 'true');
     navigate('/contact');
   };
@@ -40,25 +39,21 @@ const TrustSection = () => {
           className="mb-12"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 max-w-7xl mx-auto">
-          <div className="flex flex-col h-full">
-            <TestimonialVideoCard 
-              testimonial={activeVideo}
-              isPlaying={playing}
-              onPlayClick={handlePlayClick}
-              onContactClick={handleContactClick}
-            />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center max-w-5xl mx-auto">
+          <TestimonialVideoCard 
+            testimonial={activeVideo}
+            isPlaying={playing}
+            onPlayClick={handlePlayClick}
+            onContactClick={handleContactClick}
+          />
 
-          <div className="flex flex-col h-full">
-            <TestimonialVideoCard 
-              testimonial={testimonials[1]}
-              isPlaying={secondPlaying}
-              onPlayClick={handleSecondVideoPlay}
-              onContactClick={handleContactClick}
-              callToActionText="Demandez un devis personnalisé"
-            />
-          </div>
+          <TestimonialVideoCard 
+            testimonial={testimonials[1]}
+            isPlaying={secondPlaying}
+            onPlayClick={handleSecondVideoPlay}
+            onContactClick={handleContactClick}
+            callToActionText="Demandez un devis personnalisé"
+          />
         </div>
       </div>
     </section>

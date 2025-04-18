@@ -31,7 +31,7 @@ const TestimonialVideoCard: React.FC<TestimonialVideoCardProps> = ({
   }, [isPlaying, testimonial.videoUrl]);
 
   return (
-    <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden card-hover h-full flex flex-col">
+    <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden card-hover h-full flex flex-col max-w-[300px] mx-auto">
       <div className="relative flex-grow">
         <AspectRatio ratio={9/16} className="bg-muted">
           {isPlaying ? (
@@ -53,10 +53,10 @@ const TestimonialVideoCard: React.FC<TestimonialVideoCardProps> = ({
               <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                 <button
                   onClick={onPlayClick}
-                  className="bg-white/90 hover:bg-white text-elimyt-blue rounded-full p-6 transition-transform hover:scale-110"
+                  className="bg-white/90 hover:bg-white text-elimyt-blue rounded-full p-4 transition-transform hover:scale-110"
                   aria-label="Lire la vidéo"
                 >
-                  <Play className="h-10 w-10 fill-elimyt-blue" />
+                  <Play className="h-8 w-8 fill-elimyt-blue" />
                 </button>
               </div>
             </>
