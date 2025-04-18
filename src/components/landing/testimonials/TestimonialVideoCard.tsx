@@ -11,33 +11,33 @@ interface TestimonialVideoCardProps {
   testimonial: VideoTestimonial;
   isPlaying: boolean;
   onPlayClick: () => void;
+  onContactClick: (e: React.MouseEvent) => void;
   callToActionText?: string;
-  callToActionLink?: string;
 }
 
 const TestimonialVideoCard: React.FC<TestimonialVideoCardProps> = ({
   testimonial,
   isPlaying,
   onPlayClick,
-  callToActionText = "Contactez-nous pour transformer votre projet",
-  callToActionLink = "/contact"
+  onContactClick,
+  callToActionText = "Contactez-nous pour transformer votre projet"
 }) => {
   const videoRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     if (isPlaying && videoRef.current) {
-      videoRef.current.src = `${testimonial.videoUrl}?autoplay=1&rel=0&controls=1&showinfo=0&shorts=0`;
+      videoRef.current.src = `${testimonial.videoUrl}?autoplay=1&rel=0&controls=1&showinfo=0&shorts=1`;
     }
   }, [isPlaying, testimonial.videoUrl]);
 
   return (
-    <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden card-hover">
-      <div className="relative">
-        <AspectRatio ratio={16/9} className="bg-muted">
+    <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden card-hover h-full flex flex-col">
+      <div className="relative flex-grow">
+        <AspectRatio ratio={9/16} className="bg-muted">
           {isPlaying ? (
             <iframe
               ref={videoRef}
-              src={`${testimonial.videoUrl}?rel=0&controls=1&showinfo=0&shorts=0`}
+              src={`${testimonial.videoUrl}?rel=0&controls=1&showinfo=0&shorts=1`}
               title={`Témoignage de ${testimonial.clientName}`}
               className="absolute inset-0 w-full h-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -66,13 +66,18 @@ const TestimonialVideoCard: React.FC<TestimonialVideoCardProps> = ({
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2">{testimonial.title}</h3>
         <p className="text-foreground/70 mb-4">
-          {testimonial.clientName}, {testimonial.businessName}
+          {testimonial.clientName}
+          {testimonial.businessName && `, ${testimonial.businessName}`}
         </p>
-        <Button asChild variant="default" className="w-full">
-          <Link to={callToActionLink} className="flex items-center justify-center">
+        <Button 
+          onClick={onContactClick}
+          variant="default" 
+          className="w-full"
+        >
+          <span className="flex items-center justify-center">
             {callToActionText}
             <ExternalLink className="ml-2 h-4 w-4" />
-          </Link>
+          </span>
         </Button>
       </div>
     </div>
