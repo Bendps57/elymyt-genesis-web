@@ -31,9 +31,9 @@ const TestimonialVideoCard: React.FC<TestimonialVideoCardProps> = ({
   }, [isPlaying, testimonial.videoUrl]);
 
   return (
-    <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden card-hover h-full flex flex-col max-w-[300px] mx-auto">
+    <div className="bg-white dark:bg-card rounded-2xl shadow-lg overflow-hidden card-hover h-full flex flex-col w-full max-w-[600px] mx-auto">
       <div className="relative flex-grow">
-        <AspectRatio ratio={9/16} className="bg-muted">
+        <AspectRatio ratio={16/9} className="bg-muted">
           {isPlaying ? (
             <iframe
               ref={videoRef}
@@ -85,4 +85,3 @@ const TestimonialVideoCard: React.FC<TestimonialVideoCardProps> = ({
 };
 
 export default TestimonialVideoCard;
-
