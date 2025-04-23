@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send } from "lucide-react";
+import { Send, Phone } from "lucide-react";
 import { contactInfoData } from "./ContactInfo";
 import { RefObject } from "react";
 
@@ -13,7 +13,6 @@ interface ContactFormFieldsProps {
 }
 
 const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: ContactFormFieldsProps) => {
-  // Get the current domain for proper redirection
   const currentDomain = window.location.origin;
   
   return (
@@ -55,6 +54,23 @@ const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: Contact
             placeholder="votre@email.com"
             required
             className="w-full"
+          />
+        </div>
+      </div>
+      <div>
+        <label htmlFor="phone" className="block text-sm font-medium mb-1">
+          Téléphone
+        </label>
+        <div className="relative">
+          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="Votre numéro de téléphone"
+            className="w-full pl-10"
+            pattern="[0-9]{10}"
+            title="Veuillez entrer un numéro de téléphone valide (10 chiffres)"
           />
         </div>
       </div>
