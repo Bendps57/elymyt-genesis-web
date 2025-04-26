@@ -1,6 +1,5 @@
-
 import { Link } from "react-router-dom";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -32,13 +31,10 @@ const Footer = () => {
   
   return (
     <footer className="relative">
-      {/* Séparateur stylisé au-dessus du logo */}
       <div className="h-4 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink"></div>
       
-      {/* Section signature avec le logo */}
       <div className="bg-gradient-to-br from-elimyt-blue/20 via-elimyt-purple/20 to-elimyt-pink/20 pt-16 pb-8 relative overflow-hidden">
         <div className="container mx-auto px-4 flex flex-col items-center justify-center relative z-10">
-          {/* Logo en grand format */}
           <div className="w-full max-w-3xl mb-8 transform hover:scale-105 transition-transform duration-500">
             <img 
               src="https://i.imgur.com/EFrii9y.png" 
@@ -47,27 +43,21 @@ const Footer = () => {
             />
           </div>
           
-          {/* Tagline */}
           <p className="text-gray-600 text-lg mb-12 text-center max-w-2xl">
             L'expertise numérique qui propulse votre visibilité en ligne
           </p>
 
-          {/* Cercles décoratifs */}
           <div className="absolute top-1/4 left-10 w-48 h-48 rounded-full bg-elimyt-blue/5 blur-3xl"></div>
           <div className="absolute bottom-1/4 right-10 w-64 h-64 rounded-full bg-elimyt-pink/5 blur-3xl"></div>
           <div className="absolute top-1/3 right-1/4 w-32 h-32 rounded-full bg-elimyt-purple/5 blur-3xl"></div>
         </div>
       </div>
       
-      {/* Séparateur stylisé en-dessous du logo */}
       <div className="h-4 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink"></div>
       
-      {/* Main footer content */}
       <div className="bg-elimyt-dark text-white pt-16 pb-8">
         <div className="container mx-auto px-4 md:px-6">
-          {/* Footer grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {/* Brand section */}
             <div>
               <div className="mb-4 relative inline-block">
                 <Link to="/" className="text-2xl font-bold inline-block text-gradient">
@@ -81,7 +71,6 @@ const Footer = () => {
               </p>
             </div>
             
-            {/* Services section */}
             <div>
               <h3 className="text-lg font-bold mb-4 relative inline-block">
                 Nos Services
@@ -102,7 +91,6 @@ const Footer = () => {
               </ul>
             </div>
             
-            {/* Company and Legal sections combined */}
             <div>
               <div className="mb-8">
                 <h3 className="text-lg font-bold mb-4 relative inline-block">
@@ -117,7 +105,6 @@ const Footer = () => {
                         className="text-white/70 hover:text-white transition-colors duration-300 hover:pl-2 flex items-center before:w-0 before:h-0.5 hover:before:w-1 before:bg-elimyt-purple before:mr-0 hover:before:mr-1 before:transition-all"
                         onClick={() => {
                           if (item.name === "Contact") {
-                            // Pour le lien Contact, nous voulons faire défiler la page vers le formulaire
                             setTimeout(() => {
                               const contactForm = document.getElementById('contact-form');
                               if (contactForm) {
@@ -127,7 +114,6 @@ const Footer = () => {
                               }
                             }, 100);
                           } else {
-                            // Pour les autres liens, simplement revenir en haut de la page
                             window.scrollTo(0, 0);
                           }
                         }}
@@ -171,17 +157,34 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Footer bottom */}
           <div className="pt-8 mt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-white/50 text-sm">
                 © {new Date().getFullYear()} eLimyt. Tous droits réservés.
               </p>
-              <div className="mt-4 md:mt-0">
-                <div className="flex items-center justify-center space-x-2">
+              <div className="mt-4 md:mt-0 flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
                   <span className="text-sm text-white/50">Conçu avec</span>
                   <span className="text-elimyt-pink">❤</span>
                   <span className="text-sm text-white/50">par eLimyt</span>
+                </div>
+                <div className="flex space-x-4">
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=61575732503510" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    <Facebook size={24} />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/elimyt.agency/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    <Instagram size={24} />
+                  </a>
                 </div>
               </div>
             </div>
@@ -189,7 +192,6 @@ const Footer = () => {
         </div>
       </div>
       
-      {/* Decorative bottom wave */}
       <div className="h-6 bg-elimyt-dark">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 48" className="w-full h-6 transform translate-y-1">
           <path 
