@@ -14,6 +14,23 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "iuheg-education",
+    title: "Institut Universitaire Hautes Etudes de Guinée",
+    category: "Site Institutionnel",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&h=800&q=80",
+    description: "Site web institutionnel pour l'Institut Universitaire Hautes Etudes de Guinée.",
+    challenge: "L'Institut Universitaire Hautes Etudes de Guinée avait besoin d'un site web moderne et professionnel pour présenter ses programmes d'études, attirer de nouveaux étudiants et faciliter les démarches administratives en ligne.",
+    solution: "Création d'un site institutionnel complet avec présentation des formations, système d'inscription en ligne, espace étudiant et administration, ainsi qu'une section actualités pour communiquer avec la communauté universitaire.",
+    results: [
+      "Augmentation de 60% des demandes d'admission",
+      "Digitalisation complète des processus d'inscription",
+      "Amélioration de la visibilité internationale de l'institut",
+      "Réduction de 40% du temps de traitement administratif"
+    ],
+    technologies: ["WordPress", "Elementor Pro", "WooCommerce", "PHP", "MySQL", "JavaScript"],
+    url: "https://iuheg.education"
+  },
+  {
     id: "tresses-by-honey",
     title: "Tresses by Honey",
     category: "Site Vitrine",
