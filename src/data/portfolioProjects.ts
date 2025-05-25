@@ -1,4 +1,3 @@
-
 export interface Project {
   id: string;
   title: string;
@@ -27,7 +26,7 @@ export const projects: Project[] = [
       "Amélioration de la visibilité internationale de l'institut",
       "Réduction de 40% du temps de traitement administratif"
     ],
-    technologies: ["WordPress", "Elementor Pro", "WooCommerce", "PHP", "MySQL", "JavaScript"],
+    technologies: ["WordPress", "Elementor Pro", "PHP", "MySQL", "JavaScript"],
     url: "https://iuheg.education"
   },
   {
