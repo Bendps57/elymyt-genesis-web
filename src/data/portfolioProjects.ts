@@ -17,7 +17,7 @@ export const projects: Project[] = [
     id: "iuheg-education",
     title: "Institut Universitaire Hautes Etudes de Guinée",
     category: "Site Institutionnel",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&h=800&q=80",
+    image: "https://i.imgur.com/vTmox7r.jpeg",
     description: "Site web institutionnel pour l'Institut Universitaire Hautes Etudes de Guinée.",
     challenge: "L'Institut Universitaire Hautes Etudes de Guinée avait besoin d'un site web moderne et professionnel pour présenter ses programmes d'études, attirer de nouveaux étudiants et faciliter les démarches administratives en ligne.",
     solution: "Création d'un site institutionnel complet avec présentation des formations, système d'inscription en ligne, espace étudiant et administration, ainsi qu'une section actualités pour communiquer avec la communauté universitaire.",
