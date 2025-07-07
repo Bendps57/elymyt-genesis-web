@@ -1,5 +1,5 @@
 
-import LandingPage from "../components/landing/LandingPage";
+import SaasLandingPage from "../components/saas-landing/SaasLandingPage";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
@@ -29,14 +29,14 @@ const Index = () => {
   return (
     <main>
       <Helmet>
-        <title>eLimyt - Création de Sites Web Professionnels à Prix Mini | Agence Web Hayange</title>
-        <meta name="description" content="Agence web à Hayange spécialisée en création de sites vitrines professionnels à partir de 249,90€. Sites web rapides et optimisés pour PME, artisans et commerçants." />
-        <meta name="keywords" content="création site vitrine professionnel, site internet pas cher, site web pour PME, agence web Hayange" />
-        <link rel="canonical" href="https://elymit.com" />
+        <title>eLimyt - Création de SaaS Sur Mesure | Transformez Vos Idées en Plateformes Web</title>
+        <meta name="description" content="Spécialiste en création de SaaS sur mesure. Nous transformons vos idées et processus métiers en plateformes web puissantes. Solutions techniques, agiles et orientées résultats." />
+        <meta name="keywords" content="création SaaS sur mesure, développement plateforme web, automatisation processus métier, solution logicielle personnalisée, développement web entreprise" />
+        <link rel="canonical" href="https://elimyt.com" />
       </Helmet>
       <Navbar />
       <div className="pt-16">
-        <LandingPage />
+        <SaasLandingPage />
       </div>
       <Footer />
     </main>
