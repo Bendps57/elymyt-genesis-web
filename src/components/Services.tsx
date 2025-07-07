@@ -9,7 +9,8 @@ import {
   Smartphone,
   BarChart,
   Search,
-  Zap
+  Zap,
+  Layers
 } from "lucide-react";
 
 interface ServiceCardProps {
@@ -71,35 +72,36 @@ const ServiceCard = ({ icon, title, description, delay, price }: ServiceCardProp
 const Services = () => {
   const services = [
     {
+      icon: <Layers className="h-7 w-7" />,
+      title: "Création de SaaS Sur Mesure",
+      description: "Transformez vos idées métiers en plateformes web puissantes et personnalisées.",
+      price: "Sur devis",
+      delay: 1
+    },
+    {
       icon: <Globe className="h-7 w-7" />,
       title: "Site Vitrine",
       description: "Présentez votre entreprise avec élégance. Idéal pour les PME et les indépendants.",
       price: "249,90€",
-      delay: 1
+      delay: 2
     },
     {
       icon: <ShoppingCart className="h-7 w-7" />,
       title: "E-commerce",
       description: "Lancez votre boutique en ligne et boostez vos ventes avec une expérience d'achat optimale.",
       price: "Sur devis",
-      delay: 2
+      delay: 3
     },
     {
       icon: <Smartphone className="h-7 w-7" />,
       title: "Sites Responsifs",
       description: "Des sites parfaitement adaptés à tous les écrans, du mobile à l'ordinateur.",
-      delay: 3
+      delay: 4
     },
     {
       icon: <Search className="h-7 w-7" />,
       title: "Référencement SEO",
       description: "Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients.",
-      delay: 4
-    },
-    {
-      icon: <BarChart className="h-7 w-7" />,
-      title: "Analytique Web",
-      description: "Mesurez votre performance en ligne et prenez des décisions basées sur les données.",
       delay: 5
     },
     {

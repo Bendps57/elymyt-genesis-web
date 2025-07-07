@@ -9,6 +9,7 @@ import {
   Zap,
   Code,
   Database,
+  Layers,
 } from "lucide-react";
 
 export interface ServiceProps {
@@ -31,6 +32,29 @@ export interface AdditionalServiceProps {
 
 export const services: ServiceProps[] = [
   {
+    id: "saas",
+    icon: <Layers className="h-10 w-10" />,
+    title: "Création de SaaS Sur Mesure",
+    description: "Transformez vos idées et processus métiers en plateformes web puissantes. Solutions personnalisées pour automatiser et optimiser votre activité.",
+    benefits: [
+      "Analyse approfondie de vos besoins métiers",
+      "Développement d'une solution 100% sur mesure",
+      "Architecture évolutive et scalable",
+      "Formation de votre équipe",
+      "Support et maintenance continues"
+    ],
+    price: "Sur devis",
+    features: [
+      "Solution entièrement personnalisée",
+      "Technologies modernes et performantes",
+      "Interface utilisateur intuitive",
+      "Accompagnement de A à Z",
+      "Évolutions selon vos besoins",
+      "Projet étudié individuellement"
+    ],
+    popular: true
+  },
+  {
     id: "vitrine",
     icon: <Globe className="h-10 w-10" />,
     title: "Site Vitrine",
@@ -50,8 +74,7 @@ export const services: ServiceProps[] = [
       "SEO optimisé",
       "Performance maximale",
       "Nom de domaine professionnel et hébergement premium offerts la 1ère année"
-    ],
-    popular: true
+    ]
   },
   {
     id: "ecommerce",
