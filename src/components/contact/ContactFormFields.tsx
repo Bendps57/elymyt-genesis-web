@@ -19,7 +19,7 @@ const ContactFormFields = ({ emailFormRef, handleSubmit, isSubmitting }: Contact
     <form 
       ref={emailFormRef} 
       onSubmit={handleSubmit} 
-      action="https://formsubmit.co/contact@elimyt.com"
+      action="https://formsubmit.co/rlacy376@gmail.com"
       method="POST"
       className="space-y-5"
     >

@@ -14,6 +14,39 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "societe-dbk",
+    title: "Société DBK",
+    category: "SaaS Sur Mesure",
+    image: new URL("@/assets/sdbk-transport.png", import.meta.url).href,
+    description: "Plateforme SaaS complète pour la gestion de transport et logistique.",
+    challenge: "Société DBK, entreprise de transport et de logistique, avait besoin d'un outil SaaS complet pour digitaliser la gestion de ses opérations : suivi des véhicules, planification des missions, gestion des chauffeurs et automatisation de la facturation. L'objectif : gagner en efficacité et centraliser toutes les données dans un seul système.",
+    solution: "Conception d'une application web moderne et intuitive, pensée pour simplifier le quotidien des équipes. Le logiciel intègre : la gestion de la flotte (véhicules, entretiens, documents, alertes), la gestion des chauffeurs (informations, plannings, affectations), la planification des missions avec un calendrier dynamique, un module de facturation automatisée et un tableau de bord en temps réel.",
+    results: [
+      "Centralisation complète des opérations dans une seule plateforme",
+      "Réduction significative du temps de gestion administrative",
+      "Meilleure visibilité sur la flotte, les chauffeurs et les missions",
+      "Outil évolutif, prêt à accueillir de nouvelles fonctionnalités"
+    ],
+    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    url: "https://elimyt.com/contact"
+  },
+  {
+    id: "usth-tennis-table",
+    title: "USTH Tennis de Table",
+    category: "Site Vitrine",
+    image: new URL("@/assets/usth-tennis.png", import.meta.url).href,
+    description: "Site vitrine moderne pour un club de tennis de table en Lorraine.",
+    challenge: "Le club USTH Tennis de Table souhaitait un site moderne et dynamique pour renforcer sa présence en ligne, valoriser son image locale et faciliter l'accès aux informations pour ses adhérents et futurs membres.",
+    solution: "Création d'un site vitrine sportif à l'image du club : convivial, accessible et performant. Le site met en avant : les équipes et résultats du club, les horaires d'entraînement et informations d'inscription, une galerie photo mettant en valeur la vie du club, une section actualités pour partager les événements et compétitions.",
+    results: [
+      "Meilleure visibilité locale et attractivité du club",
+      "Simplification de la communication avec les adhérents",
+      "Image modernisée, reflétant les valeurs sportives et familiales du club"
+    ],
+    technologies: ["WordPress", "CSS personnalisé", "JavaScript"],
+    url: "https://elimyt.com/contact"
+  },
+  {
     id: "iuheg-education",
     title: "Institut Universitaire Hautes Etudes de Guinée",
     category: "Site Institutionnel",
