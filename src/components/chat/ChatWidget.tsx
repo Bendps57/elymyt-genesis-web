@@ -29,12 +29,11 @@ const ChatWidget = ({ initialMessage = "Bonjour, j'aimerais discuter de mon proj
     setIsOpen(!isOpen);
   };
 
-  const handleWhatsApp = () => {
+  const getWhatsAppUrl = () => {
     // Encodage du message pour l'URL
     const encodedMessage = encodeURIComponent(message);
     // Création de l'URL WhatsApp avec le numéro et le message pré-rempli
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
+    return `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   };
 
   return (
@@ -104,13 +103,20 @@ const ChatWidget = ({ initialMessage = "Bonjour, j'aimerais discuter de mon proj
           
           {/* Pied du chat */}
           <div className="p-4 border-t dark:border-gray-700">
-            <Button 
-              className="w-full bg-gradient hover-scale" 
-              onClick={handleWhatsApp}
+            <a 
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
             >
-              Continuer sur WhatsApp
-              <Send className="ml-2 h-4 w-4" />
-            </Button>
+              <Button 
+                className="w-full bg-gradient hover-scale"
+                type="button"
+              >
+                Continuer sur WhatsApp
+                <Send className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
             <p className="text-xs text-center mt-2 text-foreground/60">
               Nous répondons généralement en quelques minutes pendant les heures de bureau
             </p>
