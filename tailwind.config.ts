@@ -54,13 +54,20 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				elimyt: {
-					blue: '#3563E9',
-					indigo: '#6366F1',
-					purple: '#8B5CF6',
-					pink: '#EC4899',
-					dark: '#1A1F2C',
-					light: '#F9FAFB'
+					blue: 'hsl(215, 80%, 45%)',
+					navy: 'hsl(215, 80%, 20%)',
+					sky: 'hsl(200, 70%, 55%)',
+					gold: 'hsl(45, 90%, 50%)',
+					dark: 'hsl(215, 30%, 12%)',
+					light: 'hsl(210, 20%, 98%)'
 				},
+				corporate: {
+					navy: 'hsl(var(--corporate-navy))',
+					blue: 'hsl(var(--corporate-blue))',
+					sky: 'hsl(var(--corporate-sky))',
+					gold: 'hsl(var(--corporate-gold))',
+				},
+				success: 'hsl(var(--success))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

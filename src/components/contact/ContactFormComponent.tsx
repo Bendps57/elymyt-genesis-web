@@ -8,8 +8,8 @@ const ContactFormComponent = () => {
   const { isSubmitting, formSubmitted, emailFormRef, handleSubmit } = useContactForm();
   
   return (
-    <div id="contact-form" className="bg-white dark:bg-elimyt-dark/40 p-8 rounded-2xl shadow-lg">
-      <h3 className="text-2xl font-bold mb-6">
+    <div id="contact-form" className="bg-card border border-border p-8 rounded-xl corporate-shadow">
+      <h3 className="text-2xl font-bold mb-6 text-foreground">
         Envoyez-nous un message
       </h3>
       

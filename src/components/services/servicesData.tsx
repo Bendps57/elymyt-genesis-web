@@ -32,39 +32,16 @@ export interface AdditionalServiceProps {
 
 export const services: ServiceProps[] = [
   {
-    id: "saas",
-    icon: <Layers className="h-10 w-10" />,
-    title: "Création de SaaS Sur Mesure",
-    description: "Transformez vos idées et processus métiers en plateformes web puissantes. Solutions personnalisées pour automatiser et optimiser votre activité.",
-    benefits: [
-      "Analyse approfondie de vos besoins métiers",
-      "Développement d'une solution 100% sur mesure",
-      "Architecture évolutive et scalable",
-      "Formation de votre équipe",
-      "Support et maintenance continues"
-    ],
-    price: "Sur devis",
-    features: [
-      "Solution entièrement personnalisée",
-      "Technologies modernes et performantes",
-      "Interface utilisateur intuitive",
-      "Accompagnement de A à Z",
-      "Évolutions selon vos besoins",
-      "Projet étudié individuellement"
-    ],
-    popular: true
-  },
-  {
     id: "vitrine",
     icon: <Globe className="h-10 w-10" />,
-    title: "Site Vitrine",
-    description: "Présentez votre entreprise avec élégance. Solution idéale pour les PME et les indépendants qui souhaitent établir leur présence en ligne.",
+    title: "Site Vitrine Professionnel",
+    description: "Présentez votre entreprise avec élégance. Solution idéale pour les PME, artisans et indépendants qui souhaitent établir leur présence en ligne.",
     benefits: [
       "Design responsive sur mesure",
       "Optimisation pour les moteurs de recherche",
       "Intégration de formulaire de contact",
       "Optimisation des performances",
-      "Hébergement (1 an)"
+      "Hébergement premium (1 an)"
     ],
     price: "249,90€",
     features: [
@@ -73,8 +50,9 @@ export const services: ServiceProps[] = [
       "Livré en 7 jours",
       "SEO optimisé",
       "Performance maximale",
-      "Nom de domaine professionnel et hébergement premium offerts la 1ère année"
-    ]
+      "Nom de domaine et hébergement offerts 1 an"
+    ],
+    popular: true
   },
   {
     id: "ecommerce",
@@ -118,6 +96,28 @@ export const services: ServiceProps[] = [
       "SEO avancé",
       "Formation à l'utilisation",
       "Devis personnalisé"
+    ]
+  },
+  {
+    id: "saas",
+    icon: <Layers className="h-10 w-10" />,
+    title: "SaaS Sur Mesure",
+    description: "Transformez vos idées et processus métiers en plateformes web puissantes. Solutions personnalisées pour automatiser et optimiser votre activité.",
+    benefits: [
+      "Analyse approfondie de vos besoins métiers",
+      "Développement d'une solution 100% sur mesure",
+      "Architecture évolutive et scalable",
+      "Formation de votre équipe",
+      "Support et maintenance continues"
+    ],
+    price: "Sur devis",
+    features: [
+      "Solution entièrement personnalisée",
+      "Technologies modernes et performantes",
+      "Interface utilisateur intuitive",
+      "Accompagnement de A à Z",
+      "Évolutions selon vos besoins",
+      "Projet étudié individuellement"
     ]
   }
 ];

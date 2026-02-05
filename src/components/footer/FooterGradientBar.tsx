@@ -1,7 +1,7 @@
 
 const FooterGradientBar = () => {
   return (
-    <div className="h-4 bg-gradient-to-r from-elimyt-blue via-elimyt-purple to-elimyt-pink"></div>
+    <div className="h-1 bg-primary"></div>
   );
 };
 
