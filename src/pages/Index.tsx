@@ -1,12 +1,16 @@
-
-import SaasLandingPage from "../components/saas-landing/SaasLandingPage";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import HeroSection from "../components/home/HeroSection";
+import GuaranteeSection from "../components/home/GuaranteeSection";
+import FeaturesSection from "../components/home/FeaturesSection";
+import ProcessSection from "../components/home/ProcessSection";
+import ServicesPreview from "../components/home/ServicesPreview";
+import FaqSection from "../components/home/FaqSection";
+import CtaSection from "../components/home/CtaSection";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
-  // Cette fonction vérifie s'il y a une ancre dans l'URL et fait défiler jusqu'à cette section
   useEffect(() => {
     const handleAnchorScroll = () => {
       if (window.location.hash) {
@@ -21,7 +25,6 @@ const Index = () => {
     };
 
     handleAnchorScroll();
-    // Ajouter un gestionnaire d'événement pour les changements d'URL avec ancres
     window.addEventListener("hashchange", handleAnchorScroll);
     return () => window.removeEventListener("hashchange", handleAnchorScroll);
   }, []);
@@ -29,14 +32,20 @@ const Index = () => {
   return (
     <main>
       <Helmet>
-        <title>eLimyt - Création de SaaS Sur Mesure | Transformez Vos Idées en Plateformes Web</title>
-        <meta name="description" content="Spécialiste en création de SaaS sur mesure. Nous transformons vos idées et processus métiers en plateformes web puissantes. Solutions techniques, agiles et orientées résultats." />
-        <meta name="keywords" content="création SaaS sur mesure, développement plateforme web, automatisation processus métier, solution logicielle personnalisée, développement web entreprise" />
+        <title>eLimyt - Création de Sites Web Professionnels | Livré en 7 Jours</title>
+        <meta name="description" content="Votre site web professionnel livré en 7 jours pour seulement 249,90€. Garantie satisfait ou remboursé. Design moderne, SEO optimisé, hébergement inclus." />
+        <meta name="keywords" content="création site web, site vitrine professionnel, site internet pas cher, agence web" />
         <link rel="canonical" href="https://elimyt.com" />
       </Helmet>
       <Navbar />
       <div className="pt-16">
-        <SaasLandingPage />
+        <HeroSection />
+        <GuaranteeSection />
+        <FeaturesSection />
+        <ProcessSection />
+        <ServicesPreview />
+        <FaqSection />
+        <CtaSection />
       </div>
       <Footer />
     </main>
