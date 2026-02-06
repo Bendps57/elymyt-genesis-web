@@ -14,6 +14,22 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "paola-perruccio",
+    title: "Paola Perruccio",
+    category: "Site Vitrine",
+    image: new URL("@/assets/paola-perruccio.png", import.meta.url).href,
+    description: "Site vitrine élégant pour une assistante indépendante spécialisée en gestion administrative.",
+    challenge: "Paola Perruccio, assistante indépendante, avait besoin d'un site web professionnel et raffiné pour présenter ses services d'accompagnement administratif et organisationnel aux entreprises et entrepreneurs.",
+    solution: "Création d'un site vitrine moderne avec un design épuré et chaleureux, mettant en avant son expertise et son approche personnalisée. Le site présente ses services, son parcours et facilite la prise de contact.",
+    results: [
+      "Image professionnelle renforcée",
+      "Augmentation des demandes de contact",
+      "Meilleure visibilité auprès des entrepreneurs locaux"
+    ],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    url: "https://paola-perruccio.fr"
+  },
+  {
     id: "societe-dbk",
     title: "Société DBK",
     category: "SaaS Sur Mesure",
