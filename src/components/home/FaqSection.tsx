@@ -1,3 +1,4 @@
+
 import {
   Accordion,
   AccordionContent,
@@ -8,55 +9,53 @@ import {
 const FaqSection = () => {
   const faqs = [
     {
+      question: "Combien coûte un site web avec eLimyt ?",
+      answer: "Notre offre Site Web & Maintenance commence à 24,90€ HT/mois, sans engagement. Cela inclut la création du site, l'hébergement, le nom de domaine, la maintenance et les mises à jour. Aucun frais caché.",
+    },
+    {
+      question: "Y a-t-il un engagement de durée ?",
+      answer: "Non, aucun engagement. Vous pouvez résilier à tout moment. Nous sommes convaincus que la qualité de notre service vous fidélisera naturellement.",
+    },
+    {
+      question: "Suis-je propriétaire de mon site ?",
+      answer: "Oui, vous êtes propriétaire de l'intégralité de votre contenu (textes, images, logos). Si vous souhaitez partir, nous vous transférons tous vos fichiers.",
+    },
+    {
       question: "Combien de temps faut-il pour créer mon site ?",
-      answer: "Votre site web est livré en 7 jours maximum après validation de votre projet. Nous respectons toujours ce délai, sinon une semaine d'hébergement supplémentaire vous est offerte."
+      answer: "Votre site est livré en 7 jours maximum après validation du projet. Nous respectons toujours ce délai.",
     },
     {
-      question: "Que comprend l'offre à 249,90€ ?",
-      answer: "L'offre inclut un site vitrine professionnel complet : design personnalisé, jusqu'à 5 pages, optimisation SEO, responsive (mobile/tablette), formulaire de contact, hébergement premium 1 an, nom de domaine 1 an, certificat SSL et support technique."
+      question: "Que comprend la maintenance incluse ?",
+      answer: "La maintenance couvre les mises à jour de sécurité, les sauvegardes régulières, les corrections de bugs, les petites modifications de contenu et le support technique par email et téléphone.",
     },
     {
-      question: "Comment fonctionne la garantie satisfait ou remboursé ?",
-      answer: "Vous avez 14 jours après la livraison pour tester votre site. Si vous n'êtes pas entièrement satisfait, nous vous remboursons intégralement sans condition."
+      question: "Proposez-vous d'autres services que le site web ?",
+      answer: "Oui ! Nous proposons aussi le dépannage informatique, la sécurité réseau, la sauvegarde cloud et les solutions SaaS sur mesure. Un seul interlocuteur pour tous vos besoins numériques.",
     },
-    {
-      question: "Puis-je modifier mon site après la livraison ?",
-      answer: "Oui, vous avez droit à des révisions illimitées pendant la phase de conception. Après la mise en ligne, nous proposons des forfaits de maintenance pour les modifications futures."
-    },
-    {
-      question: "Dois-je fournir du contenu (textes, images) ?",
-      answer: "Idéalement oui, mais nous pouvons vous accompagner dans la rédaction de vos textes et la sélection d'images professionnelles si nécessaire."
-    },
-    {
-      question: "Mon site sera-t-il bien référencé sur Google ?",
-      answer: "Oui, tous nos sites sont optimisés pour le référencement naturel (SEO) : structure technique optimale, balises méta, vitesse de chargement rapide, et compatibilité mobile."
-    }
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section id="faq" className="section-padding section-alt">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Questions <span className="text-primary">Fréquentes</span>
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">FAQ</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy">
+            Vos questions, nos <span className="text-primary">réponses</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tout ce que vous devez savoir avant de vous lancer.
-          </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
+              <AccordionItem
+                key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6"
+                className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-sm"
               >
-                <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-4">
+                <AccordionTrigger className="text-left font-heading font-semibold text-navy hover:no-underline py-5">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4">
+                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
