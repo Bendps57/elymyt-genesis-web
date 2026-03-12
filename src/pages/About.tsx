@@ -77,7 +77,7 @@ const About = () => {
                   <p className="text-lg mb-4">
                     Chaque site qu'on crée, c'est une passerelle entre une idée… et une marque qui attire, vend, fidélise.
                     Pas besoin d'un budget à 5 chiffres pour exister en ligne.
-                    À 249,90€, on livre une image qui en vaut 2000.
+                    À 24,90€ HT/mois, on livre une image qui en vaut 2000.
                   </p>
                 </div>
                 

@@ -82,7 +82,7 @@ const Services = () => {
       icon: <Globe className="h-7 w-7" />,
       title: "Site Vitrine",
       description: "Présentez votre entreprise avec élégance. Idéal pour les PME et les indépendants.",
-      price: "249,90€",
+      price: "24,90€ HT/mois",
       delay: 2
     },
     {
