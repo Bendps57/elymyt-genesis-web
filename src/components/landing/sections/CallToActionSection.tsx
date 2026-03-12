@@ -31,7 +31,7 @@ const CallToActionSection = () => {
             </p>
             <div className="flex justify-center items-center gap-4 mb-4">
               <p className="text-3xl md:text-4xl font-bold">
-                249,90€
+                24,90€ HT/mois
               </p>
               <p className="text-xl line-through text-gray-500">
                 2000€

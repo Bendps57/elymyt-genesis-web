@@ -22,7 +22,7 @@ const HeroSection = () => {
             
             <div className="mb-6 p-4 bg-yellow-50 dark:bg-yellow-950/30 rounded-lg border border-yellow-200 dark:border-yellow-800">
               <p className="text-xl md:text-2xl font-medium text-yellow-800 dark:text-yellow-300">
-                Pour seulement <span className="text-3xl font-bold">249,90€</span>{" "}
+                Pour seulement <span className="text-3xl font-bold">24,90€ HT/mois</span>{" "}
                 <span className="text-lg line-through text-gray-500">2000€</span>
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">

@@ -31,8 +31,8 @@ const ServicesPreview = () => {
               Présentez votre entreprise avec élégance. Solution idéale pour les PME et les indépendants.
             </p>
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-3xl font-bold text-primary">249,90€</span>
-              <span className="text-muted-foreground line-through">2000€</span>
+              <span className="text-3xl font-bold text-primary">24,90€</span>
+              <span className="text-muted-foreground text-sm">HT/mois</span>
             </div>
             <ul className="space-y-2 mb-6 text-sm">
               <li className="flex items-center gap-2 text-muted-foreground">
