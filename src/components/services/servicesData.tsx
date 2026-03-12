@@ -43,7 +43,7 @@ export const services: ServiceProps[] = [
       "Optimisation des performances",
       "Hébergement premium (1 an)"
     ],
-    price: "249,90€",
+    price: "24,90€ HT/mois",
     features: [
       "Design élégant et professionnel",
       "100% responsive",
